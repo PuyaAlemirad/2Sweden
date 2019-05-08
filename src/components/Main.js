@@ -16,7 +16,7 @@ export default class Main extends React.Component {
     }
 
     render() {
-        let i = 1;
+        let i = 1; //Each Route needs a unique key.
         return (
             <main>
                 <div className="search">
@@ -45,11 +45,11 @@ export default class Main extends React.Component {
 
                     {this.state.routes.map(r => {
                         return <Route
-                        key={i++}
-                        currency={r.currency}
-                        segments={r.segments}
-                        duration={r.duration}
-                        price={r.price}
+                            key={i++}
+                            currency={r.currency}
+                            segments={r.segments}
+                            duration={r.duration}
+                            price={r.price}
                         />
                     })}
                 </div>
@@ -58,6 +58,7 @@ export default class Main extends React.Component {
     }
 
     sortRoutes() {
+        // Sorts state.routes depending on value of element with id: "sortBy"
         let sortAlg
         switch (document.getElementById("sortBy").value) {
             case "duration":
@@ -87,24 +88,23 @@ export default class Main extends React.Component {
         let origin = String(form.target.elements["origin"].value).trim()
 
         if (origin === "") {
+            // If origin field is empty, do nothing.
             form.target.elements["origin"].value = origin
-            form.target.submit()
             return
         }
 
 
         get_r2r(origin, destination)
-            // .then(console.log)
             .then(d => {
                 let routes = []
 
                 for (let r of d.routes) {
-                    console.log(r)
+                    // console.log(r)  //For debugging
 
                     let route = {
                         duration: r.totalDuration,
-                        price: (r.indicativePrices)?r.indicativePrices[0].price:"-",
-                        currency: (r.indicativePrices)?r.indicativePrices[0].currency:"",
+                        price: (r.indicativePrices)?r.indicativePrices[0].price:"-", //If price is unknown, set to "-".
+                        currency: (r.indicativePrices)?r.indicativePrices[0].currency:"", //If no price, set currency to empty string.
                         segments: []
                     }
 
