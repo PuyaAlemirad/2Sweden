@@ -35,14 +35,13 @@ export default class Main extends React.Component {
                     </form>
                 </div>
                 <div className="routes">
-                    <h4>{this.state.start} -> {this.state.dest}</h4>
-
                     <select id="sortBy" onChange={this.sortRoutes}>
                         <option value="duration">Duration</option>
                         <option value="price">Price</option>
                         <option value="connections">Connections</option>
                     </select>
 
+                    <h4>{this.state.start} -> {this.state.dest}</h4>
 
                     {this.state.routes.map(r => {
                         return <Route
@@ -104,17 +103,19 @@ export default class Main extends React.Component {
 
                     let route = {
                         duration: r.totalDuration,
-                        price: (r.indicativePrices)?r.indicativePrices[0].price:0,
+                        price: (r.indicativePrices)?r.indicativePrices[0].price:"-",
                         currency: (r.indicativePrices)?r.indicativePrices[0].currency:"",
                         segments: []
                     }
 
+                    let blue = 0;
                     for (let s in r.segments) {
                         let segment = {
+                            blueBack: (blue++%2===1),
                             transport: d.vehicles[r.segments[s].vehicle].name,
                             from: d.places[r.segments[s].depPlace].shortName,
                             to: d.places[r.segments[s].arrPlace].shortName,
-                            price: (r.segments[s].indicativePrices)?r.segments[s].indicativePrices[0].price : 0,
+                            price: (r.segments[s].indicativePrices)?r.segments[s].indicativePrices[0].price : "-",
                             currency: (r.segments[s].indicativePrices)?r.segments[s].indicativePrices[0].currency:"",
                             duration: r.segments[s].transitDuration,
                             index: s

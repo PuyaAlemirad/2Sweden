@@ -3,7 +3,44 @@
 }
 
 .routes {
+  margin: 0 10px;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
+}
+
+.segment {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+.segment.title {
+  background-color: lightgray;
+  padding: 5px 0;
+  border-bottom: 2px solid gray;
+  border-right: none;
+}
+.segment .col {
+  height: 100%;
+  border-right: 2px solid gray;
+}
+
+.blue {
+  background-color: blue;
+  color: white;
+  
+}
+
+.yellow {
+  color: black;
+  background-color: yellow;
+}
+
+.table{
+  
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr;
+
+
+
 }
