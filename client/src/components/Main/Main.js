@@ -93,61 +93,9 @@ export default class Main extends React.Component {
             return
         }
 
-
-        get_r2r(origin, destination)
-            .then(d => {
-                let routes = []
-
-                for (let r of d.routes) {
-                    // console.log(r)  //For debugging
-
-                    let route = {
-                        duration: r.totalDuration,
-                        price: (r.indicativePrices)?r.indicativePrices[0].price:"-", //If price is unknown, set to "-".
-                        currency: (r.indicativePrices)?r.indicativePrices[0].currency:"", //If no price, set currency to empty string.
-                        segments: []
-                    }
-
-                    let blue = 0;
-                    for (let s in r.segments) {
-                        let segment = {
-                            blueBack: (blue++%2===1),
-                            transport: d.vehicles[r.segments[s].vehicle].name,
-                            from: d.places[r.segments[s].depPlace].shortName,
-                            to: d.places[r.segments[s].arrPlace].shortName,
-                            price: (r.segments[s].indicativePrices)?r.segments[s].indicativePrices[0].price : "-",
-                            currency: (r.segments[s].indicativePrices)?r.segments[s].indicativePrices[0].currency:"",
-                            duration: r.segments[s].transitDuration,
-                            index: s
-                        }
-
-                        route.segments.push(segment)
-                    }
-
-                    routes.push(route)
-                }
-
-                let sortAlg
-                switch (document.getElementById("sortBy").value) {
-                    case "duration":
-                        sortAlg = (r1,r2) => r1.duration-r2.duration
-                        break
-                    case "price":
-                        sortAlg = (r1,r2) => r1.price-r2.price
-                        break
-                    case "connections":
-                        sortAlg = (r1,r2) => r1.segments.length-r2.segments.length
-                        break
-                    default:
-                        sortAlg = (r1,r2) => r1.duration-r2.duration
-                }
-                routes = routes.sort(sortAlg)
-
-                this.setState({
-                    routes: routes,
-                    start: d.places[0].longName,
-                    dest: d.places[1].longName,
-                })
-            })
+        get_r2r(origin, destination, data => {
+            this.setState({"routes": data.routes})
+            this.sortRoutes()
+        })
     }
 }
