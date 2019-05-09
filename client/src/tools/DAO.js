@@ -38,7 +38,11 @@ export function get_r2r(origin, destination, callback) {
 
                 routes.push(route)
             }
-            return({"routes": routes})
+            return({
+                "routes": routes,
+                "start": data.places[0].longName,
+                "dest": data.places[1].longName
+            })
         })
         .then(callback || (d => d))
         .catch(console.error)
