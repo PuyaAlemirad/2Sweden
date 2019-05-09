@@ -1,6 +1,6 @@
 import React from "react"
-import Segment from "./Segment"
-import {minutesToHM} from "../tools/StringFormating"
+import Segment from "../Segment"
+import {minutesToHM} from "../../tools/StringFormating"
 
 export default function Route(props) {
     return (

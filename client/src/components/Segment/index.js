@@ -1,5 +1,5 @@
 import React from "react"
-import {minutesToHM} from "../tools/StringFormating"
+import {minutesToHM} from "../../tools/StringFormating"
 
 export default function Segment(props) {
     return (
