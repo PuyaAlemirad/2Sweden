@@ -1,9 +1,10 @@
 import React from "react"
+import "./Footer"
 
 export default function Footer() {
     return (
-        <footer>
-            
+        <footer className="footer">
+            ©Team Apic
         </footer>
     )
 }

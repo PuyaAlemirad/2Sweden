@@ -1,0 +1,10 @@
+.navbar-list{
+    list-style:  none;
+    margin: 0px 10px;
+    float: left;
+    
+}
+.header-comp{
+    display: flex;
+    justify-content: center;
+}
