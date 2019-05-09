@@ -3,6 +3,7 @@ import Segment from "../Segment"
 import {minutesToHM} from "../../tools/StringFormating"
 
 export default function Route(props) {
+    let isBlue = 0;
     return (
         <div>
             <h5>{`${minutesToHM(props.duration)} ${props.price}${props.currency}`}</h5>
@@ -24,7 +25,7 @@ export default function Route(props) {
                     price={s.price}
                     duration={s.duration}
                     currency={s.currency}
-                    blue={s.blueBack}
+                    blue={isBlue++%2===1}
                     />)}
             </div>
         </div>

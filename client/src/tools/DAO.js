@@ -20,10 +20,8 @@ export function get_r2r(origin, destination, callback) {
                     segments: []
                 }
 
-                let blue = 0;
                 for (let s in r.segments) {
                     let segment = {
-                        blueBack: (blue++%2===1),
                         transport: data.vehicles[r.segments[s].vehicle].name,
                         from: data.places[r.segments[s].depPlace].shortName,
                         to: data.places[r.segments[s].arrPlace].shortName,
