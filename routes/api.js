@@ -3,9 +3,6 @@ const express = require('express')
 const router = express.Router()
 const axios = require("axios")
 
-// router.get("/", (req, res) => {
-//     res.json({"message": "Hello World!"})
-// })
 
 router.get("/r2r/:from/:to", (req, res) => {
     console.log("Client request params:",req.params)

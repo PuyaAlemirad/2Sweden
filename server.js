@@ -4,7 +4,6 @@ const port = process.env.PORT || 5000
 const apiRoutes = require('./routes/api')
 
 
-// test
 app.listen(port, () => console.log("Server listening on port", port))
 
 app.use("/api", apiRoutes)
