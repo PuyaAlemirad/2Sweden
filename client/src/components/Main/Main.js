@@ -1,6 +1,6 @@
 import React from "react"
 import Route from "./../Route"
-import {get_r2r} from "./../../tools/API"
+import {get_r2r} from "./../../tools/DAO"
 
 export default class Main extends React.Component {
     constructor() {
@@ -31,7 +31,7 @@ export default class Main extends React.Component {
                             <option value="åre">Åre</option>
                             <option value="falun">Falun</option>
                         </select>
-                        <button type="submit" class="btn btn-primary btn btn-main">Search</button>
+                        <button type="submit" className="btn btn-primary btn btn-main">Search</button>
                     </form>
                 </div>
                 <div className="routes">
