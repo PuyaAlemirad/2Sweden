@@ -23,12 +23,12 @@ export default class Main extends React.Component {
                     <form onSubmit={this.search}>
                         <input 
                             required 
-                            placeholder="From" 
+                            placeholder="🔍From" 
                             name="origin"
                         />
                         <select name="destination">
                             <option value="stockholm">Stockholm</option>
-                            <option value="åre">Åre</option>
+                            <option value="are, sweden">Åre</option>
                             <option value="falun">Falun</option>
                         </select>
                         <button type="submit" className="btn btn-primary btn btn-main">Search</button>
@@ -94,7 +94,11 @@ export default class Main extends React.Component {
         }
 
         get_r2r(origin, destination, data => {
-            this.setState({"routes": data.routes})
+            this.setState({
+                "routes": data.routes,
+                "start": data.start,
+                "dest": data.dest
+            })
             this.sortRoutes()
         })
     }
