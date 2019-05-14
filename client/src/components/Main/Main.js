@@ -31,6 +31,18 @@ export default class Main extends React.Component {
                             <option value="åre">Åre</option>
                             <option value="falun">Falun</option>
                         </select>
+                        <select name="currencyCode">
+                            <option value="">---</option>
+                            <option value="EUR">EUR</option>
+                            <option value="CAD">CAD</option>
+                            <option value="GBP">GBP</option>
+                            <option value="HUF">HUF</option>
+                            <option value="NOK">NOK</option>
+                            <option value="PLN">PLN</option>
+                            <option value="SEK">SEK</option>
+                            <option value="USD">USD</option>
+                            <option value="CHF">CHF</option>
+                        </select>
                         <button type="submit" className="btn btn-primary btn btn-main">Search</button>
                     </form>
                 </div>
@@ -86,6 +98,7 @@ export default class Main extends React.Component {
         
         let destination = form.target.elements["destination"].value
         let origin = String(form.target.elements["origin"].value).trim()
+        let currencyCode = form.target.elements["currencyCode"].value
 
         if (origin === "") {
             // If origin field is empty, do nothing.
@@ -94,7 +107,7 @@ export default class Main extends React.Component {
         }
 
 
-        get_r2r(origin, destination)
+        get_r2r(origin, destination, currencyCode)
             .then(d => {
                 let routes = []
 

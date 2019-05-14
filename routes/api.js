@@ -4,14 +4,15 @@ const router = express.Router()
 const axios = require("axios")
 
 
-router.get("/r2r/:from/:to", (req, res) => {
+router.get("/r2r/:from/:to/:currencyCode", (req, res) => {
     console.log("Client request params:",req.params)
 
     const key = process.env.ROME_2_RIO_KEY
     const origin = req.params.from
     const destination = req.params.to
+    const currencyCode = req.params.currencyCode
 
-    const url = `http://free.rome2rio.com/api/1.4/json/Search?key=${key}&oName=${origin}&dName=${destination}`
+    const url = `http://free.rome2rio.com/api/1.4/json/Search?key=${key}&oName=${origin}&dName=${destination}&currencyCode=${currencyCode}`
 
     axios.get(url)
         .then(response => {

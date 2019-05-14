@@ -1,5 +1,5 @@
-export function get_r2r(origin, destination) {
-    return fetch(`api/r2r/${origin}/${destination}`)
+export function get_r2r(origin, destination, currencyCode) {
+    return fetch(`api/r2r/${origin}/${destination}/${currencyCode}`)
         .then(d => {
             console.log(d)
             return d
