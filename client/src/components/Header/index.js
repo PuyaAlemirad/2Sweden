@@ -9,9 +9,9 @@ function Header(){
             <nav className="navbar">
                 <ul className="navbar-ul">
                     <a href="SearchResult.js" className="navbar-list">Sök resor</a>
-                    <a href="#" className="navbar-list">Läs om eventet</a>
-                    <a href="#" className="navbar-list">Läs om våra orter</a>
-                    <a href="#" className="navbar-list">Se rekommendationer</a>
+                    <a href="SearchResult.js" className="navbar-list">Läs om eventet</a>
+                    <a href="SearchResult.js" className="navbar-list">Läs om våra orter</a>
+                    <a href="SearchResult.js" className="navbar-list">Se rekommendationer</a>
                 </ul>
             </nav>
         </div>

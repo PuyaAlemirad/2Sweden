@@ -40,16 +40,17 @@ export default class Main extends React.Component {
                     </select>
                 
 
-                    <table className="table">
-                        <thead>
+                    <table className="table" >
+                        <thead >
                             <tr className="segment title">
-                                <th>From-To</th>
-                                <th>Transport</th>
-                                <th>Duration</th>
-                                <th>Price</th>
+                            
+                                <th>From-To </th>
+                                <th>Transport </th>
+                                <th>Duration </th>
+                                <th>Price($$$) </th>
                             </tr>
                         </thead>
-                        <tbody>
+                       
 
                             {this.state.routes.map(r => {
                                 return <Route
@@ -63,7 +64,7 @@ export default class Main extends React.Component {
                                     destination={r.endPoint}
                                 />
                             })}
-                        </tbody>
+                       
                     </table>
                 
             </div>
