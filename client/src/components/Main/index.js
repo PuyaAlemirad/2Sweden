@@ -32,7 +32,7 @@ export default class Main extends React.Component {
                             <option value="falun">Falun</option>
                         </select>
                         <select name="currencyCode">
-                            <option value="">---</option>
+                            <option value="USD">USD</option>
                             <option value="EUR">EUR</option>
                             <option value="CAD">CAD</option>
                             <option value="CHF">CHF</option>
@@ -41,7 +41,6 @@ export default class Main extends React.Component {
                             <option value="NOK">NOK</option>
                             <option value="PLN">PLN</option>
                             <option value="SEK">SEK</option>
-                            <option value="USD">USD</option>
                         </select>
                         <button type="submit" className="btn btn-primary btn btn-main">Search</button>
                     </form>
