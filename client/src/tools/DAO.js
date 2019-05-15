@@ -4,8 +4,9 @@ export function get_r2r(origin, destination, currencyCode, callback) {
         //     console.log(d)
         //     return d
         // })
+        
         .then(res => res.json())
-        .then(data => {
+           .then(data => {
             // console.log(data) // for debugging
 
             let routes = []
@@ -17,7 +18,9 @@ export function get_r2r(origin, destination, currencyCode, callback) {
                     duration: r.totalDuration,
                     price: (r.indicativePrices)?r.indicativePrices[0].price:"-", //If price is unknown, set to "-".
                     currency: (r.indicativePrices)?r.indicativePrices[0].currency:"", //If no price, set currency to empty string.
-                    segments: []
+                    segments: [],
+                    startPoint: data.places[r.segments[0].depPlace].shortName,
+                    endPoint: data.places[r.segments[r.segments.length-1].arrPlace].shortName
                 }
 
                 for (let s in r.segments) {
@@ -37,12 +40,11 @@ export function get_r2r(origin, destination, currencyCode, callback) {
                 routes.push(route)
             }
             return({
-                "routes": routes,
-                "start": data.places[0].longName,
-                "dest": data.places[1].longName
+                "routes": routes
             })
     
         })
         .then(callback || (d => d))
         .catch(console.error)
+
 }

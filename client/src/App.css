@@ -14,39 +14,63 @@
 
 .segment {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr ;
+  
 }
+
 .segment.title {
   background-color: lightgray;
-  padding: 5px 0;
-  border-bottom: 2px solid gray;
+  padding: 1px 0;
+  border-bottom: 1px solid gray;
   border-right: none;
+ text-align-last: center;
+}
+.segment.huvudtable {
+  background-color:lightblue;
+  
+ font-weight: 400;
+ 
 }
 .segment .col {
   height: 100%;
-  border-right: 2px solid gray;
+  border-right: 1px solid gray;
+  font-weight: 16px;
 }
 
 .blue {
-  background-color:#006699;
+  background-color:blue;
   color: white;
   
+}
+.white{
+  background-color:blue;
+  border-radius: 25px;
+  font-weight: 18px;
+  color: antiquewhite
+
 }
 
 .yellow {
   color: black;
   background-color: #ffcc00;
+
+}
+
+.navy{
+  background-color:blue;
+  border-radius: 25px;
+  color: antiquewhite
 }
 
 .table{
   
-  border: 2px solid black;
-  display: grid;
-  grid-template-columns: 1fr;
-
-
+  
+  border-radius: 25px;
+ border-end-end-radius: 25px;
+ 
 
 }
+
 
 .header{
   grid-area: header;
@@ -62,6 +86,7 @@
    
   
 }
+
 .App {
 
   text-align: center;
@@ -80,3 +105,4 @@
   width: 100px;
   height: 100px;
 }
+

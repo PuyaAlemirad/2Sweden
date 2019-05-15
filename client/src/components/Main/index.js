@@ -1,13 +1,11 @@
 import React from "react"
 import Route from "../Route"
-import {get_r2r} from "../../tools/DAO"
+import { get_r2r } from "../../tools/DAO"
 
 export default class Main extends React.Component {
     constructor() {
         super()
         this.state = {
-            start: "",
-            dest: "",
             routes: []
         }
 
@@ -16,14 +14,14 @@ export default class Main extends React.Component {
     }
 
     render() {
-        let i = 1; //Each Route needs a unique key.
+        let i = 0; //Each Route needs a unique key.
         return (
             <main>
                 <div className="search">
                     <form onSubmit={this.search}>
-                        <input 
-                            required 
-                            placeholder="🔍From" 
+                        <input
+                            required
+                            placeholder="🔍From"
                             name="origin"
                         />
                         <select name="destination">
@@ -51,20 +49,37 @@ export default class Main extends React.Component {
                         <option value="price">Price</option>
                         <option value="connections">Connections</option>
                     </select>
+                
 
-                    <h4>{this.state.start} -> {this.state.dest}</h4>
+                    <table className="table" >
+                        <thead >
+                            <tr className="segment title">
+                            
+                                <th>From-To </th>
+                                <th>Transport </th>
+                                <th>Duration </th>
+                                <th>Price($$$) </th>
+                            </tr>
+                        </thead>
+                       
 
-                    {this.state.routes.map(r => {
-                        return <Route
-                            key={i++}
-                            currency={r.currency}
-                            segments={r.segments}
-                            duration={r.duration}
-                            price={r.price}
-                        />
-                    })}
-                </div>
-            </main>
+                            {this.state.routes.map(r => {
+                                return <Route
+                                    key={i++}
+                                    dataKey={i}
+                                    currency={r.currency}
+                                    segments={r.segments}
+                                    duration={r.duration}
+                                    price={r.price}
+                                    origin={r.startPoint}
+                                    destination={r.endPoint}
+                                />
+                            })}
+                       
+                    </table>
+                
+            </div>
+        </main>
         )
     }
 
@@ -73,20 +88,20 @@ export default class Main extends React.Component {
         let sortAlg
         switch (document.getElementById("sortBy").value) {
             case "duration":
-                sortAlg = (r1,r2) => r1.duration-r2.duration
+                sortAlg = (r1, r2) => r1.duration - r2.duration
                 break
             case "price":
-                sortAlg = (r1,r2) => r1.price-r2.price
+                sortAlg = (r1, r2) => r1.price - r2.price
                 break
             case "connections":
-                sortAlg = (r1,r2) => r1.segments.length-r2.segments.length
+                sortAlg = (r1, r2) => r1.segments.length - r2.segments.length
                 break
             default:
-                sortAlg = (r1,r2) => r1.duration-r2.duration
+                sortAlg = (r1, r2) => r1.duration - r2.duration
         }
 
         let sortedList = this.state.routes.sort(sortAlg)
-        
+
         this.setState({
             routes: sortedList
         })
@@ -94,7 +109,7 @@ export default class Main extends React.Component {
 
     search(form) {
         form.preventDefault()
-        
+
         let destination = form.target.elements["destination"].value
         let origin = String(form.target.elements["origin"].value).trim()
         let currencyCode = form.target.elements["currencyCode"].value
