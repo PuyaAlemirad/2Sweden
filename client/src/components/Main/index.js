@@ -6,7 +6,8 @@ export default class Main extends React.Component {
     constructor() {
         super()
         this.state = {
-            routes: []
+            routes: [],
+            currencyCode:"$$$"
         }
 
         this.search = this.search.bind(this)
@@ -58,7 +59,7 @@ export default class Main extends React.Component {
                                 <th>From-To </th>
                                 <th>Transport </th>
                                 <th>Duration </th>
-                                <th>Price($$$) </th>
+                                <th>Price({this.state.currencyCode}) </th>
                             </tr>
                         </thead>
                        
@@ -124,7 +125,8 @@ export default class Main extends React.Component {
             this.setState({
                 "routes": data.routes,
                 "start": data.start,
-                "dest": data.dest
+                "dest": data.dest,
+                currencyCode:data.currencyCode
 
             })
             this.sortRoutes()

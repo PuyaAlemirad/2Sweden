@@ -40,7 +40,8 @@ export function get_r2r(origin, destination, currencyCode, callback) {
                 routes.push(route)
             }
             return({
-                "routes": routes
+                routes: routes,
+                currencyCode:data.currencyCode
             })
     
         })
