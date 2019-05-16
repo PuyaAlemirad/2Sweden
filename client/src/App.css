@@ -47,7 +47,7 @@ body {
 }
 
 .sweden-loggo{
-  height: 15rem;
+  height: 12rem;
   margin: 15px;
   
   
@@ -58,8 +58,9 @@ body {
   }
 
   .tosweden-h3{
+    display: none;
     text-align: center;
-    font-size: 10rem;
+    font-size: 6rem;
     font-weight: bold;
     color:#ffcc00;
     
@@ -118,7 +119,7 @@ body {
 }
 
 
-@media  (min-width: 600px) {
+@media  (min-width: 700px) {
   .bigNav{
   display:block;
   }
@@ -130,6 +131,7 @@ body {
     display: flex;
     justify-content: space-between;
   }
+
 
 }
 
@@ -149,7 +151,7 @@ body {
 }
 
 .search{
-  
+ 
 }
 
 .select{
@@ -163,12 +165,23 @@ body {
 .btn-main{
   color: #ffcc00;
   margin-bottom: 10px;
+  
 
+}
+
+.sortBy{
+  float: right;
+  
 }
 
 .sm-flex{
   /* display: flex;
   text-align: center; */
+}
+
+.custom-select{
+
+  
 }
 
 

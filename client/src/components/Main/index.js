@@ -23,7 +23,7 @@ export default class Main extends React.Component {
                 <div className="container search">
                  <form onSubmit={this.search}>
                     <div className="row sm-flex">
-                        <div className="col-lg-3 col-md-6">
+                        <div className="col-lg-6 col-md-6">
                              
                                 <input
                                      required
@@ -31,28 +31,15 @@ export default class Main extends React.Component {
                                      name="origin"
                                      className="search"
                                 />
-                             
-                      
                         </div>
-
-                        
-
-                        <div className="col-lg-9 col-md-6 form-group ">
-                        
-                            <div className="">
-                            
-                                 <select name="destination" className="custom-select-lg">
+                        <div className="col-lg-6 col-md-6 form-group ">                      
+                                 <select name="destination" className="custom-select">
                                      <option selected value="stockholm">Stockholm</option>
                                     <option value="are">Åre</option>
                                     <option value="falun">Falun</option>
-                                    
                                 </select>
                                 
-                            </div>
-                            
-                                <div className="">
-
-                                <select name="currencyCode" className="custom-select-lg">
+                                <select name="currencyCode" className="custom-select">
                                         <option value="USD">USD</option>
                                         <option value="EUR">EUR</option>
                                         <option value="CAD">CAD</option>
@@ -63,9 +50,6 @@ export default class Main extends React.Component {
                                         <option value="PLN">PLN</option>
                                         <option value="SEK">SEK</option>
                                     </select>
-                                </div>
-                            
-                      
                         </div>
 
 
@@ -83,19 +67,17 @@ export default class Main extends React.Component {
                         </div> 
                         </div> */}
                         
-                         <div className="col-lg-3 col-md-6">
+                         <div className="col-lg-6 col-md-6">
                              <a href="#" className="schedule">See the Olympic Schedule</a>
                         </div>
-                        <div className="col-lg-9 col-md-6">
-                        
+                        <div className="col-lg-6 col-md-6">
                         <button type="submit" className="btn btn-primary btn btn-main ">Search</button>
-                       
                          </div>
                          
                     </div>
 
                     </form>
-                    <div className="col-lg-9 col-md-6">
+                    <div className="col-lg col-md-6 sortBy">
                     <select id="sortBy" onChange={this.sortRoutes}>
                         <option value="sort">Sort By</option>
                         <option value="duration">Duration</option>

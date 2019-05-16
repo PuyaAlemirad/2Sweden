@@ -4,7 +4,8 @@ import React from 'react';
 
 export default function Navbar(){
     return(
-        <nav className="col-lg-8 col-md-6">
+      
+     <nav className="col-lg-8 col-md-8">
         <div className="navbar bigNav">
         <ul className="ul-list">
         <a href="#" className="n-link">Sök resor</a>
@@ -13,7 +14,7 @@ export default function Navbar(){
         <a href="#" className="n-link">Se rekommendationer</a>
     </ul>
         </div>
-        <div><h3 className="tosweden-h3 bigNav">2Sweden</h3></div>
+        <div><h3 className="tosweden-h3 d-md-block">2Sweden</h3></div>
         <div className="pos-f-t smallNav">
 
 
@@ -29,5 +30,7 @@ export default function Navbar(){
 </div>
 </div>                 
         </nav>
+        
+   
     );
 }
