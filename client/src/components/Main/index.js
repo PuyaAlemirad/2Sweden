@@ -39,7 +39,7 @@ export default class Main extends React.Component {
                             <option value="HUF">HUF</option>
                             <option value="NOK">NOK</option>
                             <option value="PLN">PLN</option>
-                            <option value="SEK">SEK</option>
+                            <option value="SEK">SEK</option>    
                         </select>
                         <button type="submit" className="btn btn-primary btn btn-main">Search</button>
                     </form>
@@ -74,6 +74,7 @@ export default class Main extends React.Component {
                                     price={r.price}
                                     origin={r.startPoint}
                                     destination={r.endPoint}
+
                                 />
                             })}
                        
@@ -123,9 +124,9 @@ export default class Main extends React.Component {
 
         get_r2r(origin, destination, currencyCode, data => {
             this.setState({
-                "routes": data.routes,
-                "start": data.start,
-                "dest": data.dest,
+                routes: data.routes,
+                start: data.start,
+                dest: data.dest,
                 currencyCode:data.currencyCode
 
             })

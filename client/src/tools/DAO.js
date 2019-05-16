@@ -41,7 +41,7 @@ export function get_r2r(origin, destination, currencyCode, callback) {
             }
             return({
                 routes: routes,
-                currencyCode:data.currencyCode
+                currencyCode:data.routes[0].indicativePrices[0].currency
             })
     
         })
