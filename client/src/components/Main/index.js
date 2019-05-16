@@ -1,18 +1,28 @@
 import React from "react"
 import Route from "../Route"
-import { get_r2r } from "../../tools/DAO"
+import { get_r2r, get_CC } from "../../tools/DAO"
 
 export default class Main extends React.Component {
     constructor() {
         super()
         this.state = {
             routes: [],
-            currencyCode:"$$$"
+            currencyCode:"$$$",
+            localCurrency:null
         }
 
         this.search = this.search.bind(this)
         this.sortRoutes = this.sortRoutes.bind(this)
     }
+    componentDidMount(){
+      
+    get_CC(curr => {
+        this.setState({localCurrency:curr})
+    })
+       
+        
+    
+}
 
     render() {
         let i = 0; //Each Route needs a unique key.
@@ -61,6 +71,7 @@ export default class Main extends React.Component {
                                 {/* för att flytta ner olympiska schemat */}
                                 
                                     <select name="currencyCode">
+                                        <option value={this.state.localCurrency}>{`Local currency(${this.state.localCurrency})`}</option>
                                         <option value="USD">USD</option>
                                         <option value="EUR">EUR</option>
                                         <option value="CAD">CAD</option>
@@ -161,14 +172,16 @@ export default class Main extends React.Component {
         let destination = form.target.elements["destination"].value
         let origin = String(form.target.elements["origin"].value).trim()
         let currencyCode = form.target.elements["currencyCode"].value
+        
 
         if (origin === "") {
             // If origin field is empty, do nothing.
             form.target.elements["origin"].value = origin
             return
         }
-
+        
         get_r2r(origin, destination, currencyCode, data => {
+            console.log(this.state.localCurrency)
             this.setState({
                 routes: data.routes,
                 start: data.start,
@@ -178,5 +191,6 @@ export default class Main extends React.Component {
             })
             this.sortRoutes()
         })
-    }
+    
+}
 }

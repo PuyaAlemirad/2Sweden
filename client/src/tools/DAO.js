@@ -7,7 +7,7 @@ export function get_r2r(origin, destination, currencyCode, callback) {
         
         .then(res => res.json())
            .then(data => {
-            // console.log(data) // for debugging
+            console.log(data) // for debugging
 
             let routes = []
 
@@ -43,6 +43,24 @@ export function get_r2r(origin, destination, currencyCode, callback) {
                 routes: routes,
                 currencyCode:data.routes[0].indicativePrices[0].currency
             })
+    
+        })
+        .then(callback || (d => d))
+        .catch(console.error)
+
+}
+
+export function get_CC(callback) {
+    
+    fetch(`api2/CC`)
+        // .then(d => {
+        //     console.log(d)
+        //     return d
+        // })
+        
+        .then(res => res.json())
+           .then(data => {
+               return data.currency.code
     
         })
         .then(callback || (d => d))

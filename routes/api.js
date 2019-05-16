@@ -4,7 +4,7 @@ const router = express.Router()
 const axios = require("axios")
 
 
-router.get("/r2r/:from/:to/:currencyCode", (req, res) => {
+router.get("/r2r/:from/:to/:currencyCode",(req, res) => {
     console.log("Client request params:",req.params)
    
 
@@ -24,7 +24,7 @@ router.get("/r2r/:from/:to/:currencyCode", (req, res) => {
         .catch(err => {
             console.error(err)
             res.status(500).send("Error from external API")
-        })
+        })        
 
 })
 
