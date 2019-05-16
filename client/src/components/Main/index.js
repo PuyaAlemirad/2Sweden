@@ -34,33 +34,25 @@ export default class Main extends React.Component {
                              
                       
                         </div>
-                    
-                        <div className="col-lg-9 col-md-6">
+
+                        
+
+                        <div className="col-lg-9 col-md-6 form-group ">
+                        
+                            <div className="">
                             
-                                 <select name="destination" className="select" >
-                                     <option value="stockholm">Stockholm</option>
+                                 <select name="destination" className="custom-select-lg">
+                                     <option selected value="stockholm">Stockholm</option>
                                     <option value="are">Åre</option>
                                     <option value="falun">Falun</option>
+                                    
                                 </select>
-                           
-                      
-                        </div>
-                    
-                         <div className="col-lg-3 col-md-6">
-                                <label className="date">
-                                 Departure date<br/>
-                                <input type="date"/>
-                                </label>
-                         </div>
-                        <div className="col-lg-2 col-md-6">
-                                <label className="date">Going home date<br/>
-                                    <input type="date"/>
-                                </label>
-                        </div> 
-                        <div className="col-lg-7">
-                                {/* för att flytta ner olympiska schemat */}
                                 
-                                    <select name="currencyCode">
+                            </div>
+                            
+                                <div className="">
+
+                                <select name="currencyCode" className="custom-select-lg">
                                         <option value="USD">USD</option>
                                         <option value="EUR">EUR</option>
                                         <option value="CAD">CAD</option>
@@ -71,9 +63,26 @@ export default class Main extends React.Component {
                                         <option value="PLN">PLN</option>
                                         <option value="SEK">SEK</option>
                                     </select>
-                               
-                        
+                                </div>
+                            
+                      
+                        </div>
+
+
+                        {/* <div>
+                        <div className="col-lg-3 col-md-6">
+                                <label className="date">
+                                 Departure date<br/>
+                                <input type="date"/>
+                                </label>
+                         </div>
+                        <div className="col-lg-2 col-md-6">
+                                <label className="date">Going home date<br/>
+                                    <input type="date"/>
+                                </label>
                         </div> 
+                        </div> */}
+                        
                          <div className="col-lg-3 col-md-6">
                              <a href="#" className="schedule">See the Olympic Schedule</a>
                         </div>
