@@ -1,10 +1,13 @@
 import React from "react"
-import "./Footer.css"
 
-export default function Footer() {
-    return (
-        <footer className="footer">
-            ©Team Apic
-        </footer>
-    )
+
+export default function Footer(){
+    return(
+        <div className="footer-div">
+        
+            <footer className="footer">
+                ©TEAM APIC
+            </footer>
+        </div>
+    );
 }

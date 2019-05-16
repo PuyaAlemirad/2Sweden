@@ -17,49 +17,94 @@ export default class Main extends React.Component {
     render() {
         let i = 0; //Each Route needs a unique key.
         return (
-            <main>
-                <div className="search">
-                    <form onSubmit={this.search}>
-                        <input
-                            required
-                            placeholder="🔍From"
-                            name="origin"
-                        />
-                        <select name="destination">
-                            <option value="stockholm">Stockholm</option>
-                            <option value="are, sweden">Åre</option>
-                            <option value="falun">Falun</option>
-                        </select>
-                        <select name="currencyCode">
-                            <option value="USD">USD</option>
-                            <option value="EUR">EUR</option>
-                            <option value="CAD">CAD</option>
-                            <option value="CHF">CHF</option>
-                            <option value="GBP">GBP</option>
-                            <option value="HUF">HUF</option>
-                            <option value="NOK">NOK</option>
-                            <option value="PLN">PLN</option>
-                            <option value="SEK">SEK</option>
-                        </select>
-                        <button type="submit" className="btn btn-primary btn btn-main">Search</button>
+
+            <main className="main-div">
+
+                <div className="container search">
+                 <form onSubmit={this.search}>
+                    <div className="row sm-flex">
+                        <div className="col-lg-3 col-md-6">
+                             
+                                <input
+                                     required
+                                     placeholder="🔍From"
+                                     name="origin"
+                                     className="search"
+                                />
+                             
+                      
+                        </div>
+                    
+                        <div className="col-lg-9 col-md-6">
+                            
+                                 <select name="destination" className="select" >
+                                     <option value="stockholm">Stockholm</option>
+                                    <option value="are">Åre</option>
+                                    <option value="falun">Falun</option>
+                                </select>
+                           
+                      
+                        </div>
+                    
+                         <div className="col-lg-3 col-md-6">
+                                <label className="date">
+                                 Departure date<br/>
+                                <input type="date"/>
+                                </label>
+                         </div>
+                        <div className="col-lg-2 col-md-6">
+                                <label className="date">Going home date<br/>
+                                    <input type="date"/>
+                                </label>
+                        </div> 
+                        <div className="col-lg-7">
+                                {/* för att flytta ner olympiska schemat */}
+                                
+                                    <select name="currencyCode">
+                                        <option value="USD">USD</option>
+                                        <option value="EUR">EUR</option>
+                                        <option value="CAD">CAD</option>
+                                        <option value="CHF">CHF</option>
+                                        <option value="GBP">GBP</option>
+                                        <option value="HUF">HUF</option>
+                                        <option value="NOK">NOK</option>
+                                        <option value="PLN">PLN</option>
+                                        <option value="SEK">SEK</option>
+                                    </select>
+                               
+                        
+                        </div> 
+                         <div className="col-lg-3 col-md-6">
+                             <a href="#" className="schedule">See the Olympic Schedule</a>
+                        </div>
+                        <div className="col-lg-9 col-md-6">
+                        
+                        <button type="submit" className="btn btn-primary btn btn-main ">Search</button>
+                       
+                         </div>
+                         
+                    </div>
                     </form>
-                </div>
-                <div className="routes">
+                    <div className="col-lg-9 col-md-6">
                     <select id="sortBy" onChange={this.sortRoutes}>
+                        <option value="sort">Sort By</option>
                         <option value="duration">Duration</option>
                         <option value="price">Price</option>
                         <option value="connections">Connections</option>
                     </select>
-                
+                    </div>
+                </div>
 
-                    <table className="table" >
+                <div className="routes">                
+
+                    <table className="table table-dark">
                         <thead >
                             <tr className="segment title">
                             
-                                <th>From-To </th>
-                                <th>Transport </th>
-                                <th>Duration </th>
-                                <th>Price({this.state.currencyCode}) </th>
+                                <th scope="col">From --> To </th>
+                                <th scope="col">Transport </th>
+                                <th scope="col">Duration </th>
+                                <th scope="col">Price({this.state.currencyCode}) </th>
                             </tr>
                         </thead>
                        
@@ -79,7 +124,7 @@ export default class Main extends React.Component {
                        
                     </table>
                 
-            </div>
+                </div>
         </main>
         )
     }

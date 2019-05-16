@@ -16,7 +16,7 @@ export default function Route(props) {
             
         
            
-                <td  className="col glyphicon glyphicon-triangle-bottom"><span/> { props.segments[0].from} - {props.segments[props.segments.length-1].to}</td>
+                <td className="col glyphicon glyphicon-triangle-bottom"><span/> { props.segments[0].from} - {props.segments[props.segments.length-1].to}</td>
                 <td className="col">{props.segments.map(s=>s.transport).join(" - ")}</td>
                 <td className="col">{minutesToHM(props.duration)}</td>
                 <td>{props.price}</td>
