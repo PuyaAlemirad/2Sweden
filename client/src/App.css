@@ -5,15 +5,31 @@
   margin: 0px;
   padding: 0px;
 }
+html{
+  height: 100%;
+ 
+}
+body {
+  height: 100%;
+  background-image: linear-gradient(#006699,#ffcc00,#006699);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+#root{
+  height: 100%;
+  
+}
+
+
 
 .container-fluid {
+  height: 100%;  
   display: grid;
   grid-gap: 1em;
   grid-template-columns: auto;
   grid-template-rows: auto auto auto;
   grid-template-areas: 
     "header"
-    /* "navbar" */
     "main"
     "footer";
 }
@@ -27,12 +43,11 @@
   grid-area: header;
   background-color: #006699;
   border-radius: 25px;
-  border: 2px solid #73AD21;
   padding: 20px;
 }
 
 .sweden-loggo{
-  height: 15rem;
+  height: 12rem;
   margin: 15px;
   
   
@@ -43,8 +58,9 @@
   }
 
   .tosweden-h3{
+    display: none;
     text-align: center;
-    font-size: 10rem;
+    font-size: 6rem;
     font-weight: bold;
     color:#ffcc00;
     
@@ -66,7 +82,7 @@
   grid-area: navbar;
   background-color: #006699;
   border-radius: 25px;
-  border: 2px solid #73AD21;
+  
 }
 
 .navbar{
@@ -103,7 +119,7 @@
 }
 
 
-@media  (min-width: 600px) {
+@media  (min-width: 700px) {
   .bigNav{
   display:block;
   }
@@ -116,6 +132,7 @@
     justify-content: space-between;
   }
 
+
 }
 
 /*MAIN*/
@@ -125,19 +142,19 @@
   grid-area: main;
   background-color: #ffcc00;
   border-radius: 25px;
-  border: 2px solid #73AD21;
+  padding-top: 20px;
+  
 }
 
 .main{
-  display: flex;
+  /* display: flex; */
 }
 
 .search{
-  margin-top:10px;
+ 
 }
 
 .select{
-  margin-top:10px;
   text-align: center;
 }
 
@@ -148,12 +165,23 @@
 .btn-main{
   color: #ffcc00;
   margin-bottom: 10px;
+  
 
 }
 
+.sortBy{
+  float: right;
+  
+}
+
 .sm-flex{
-  display: flex;
-  text-align: center;
+  /* display: flex;
+  text-align: center; */
+}
+
+.custom-select{
+
+  
 }
 
 
@@ -164,14 +192,14 @@
   grid-area: footer;
   background-color: #006699;
   border-radius: 25px;
-  border: 2px solid #73AD21;
+  
 }
 
 .footer{
   text-align: center;
   color: #ffcc00;
   font-size: 1.5rem;
-  margin-top: 100px;
+  padding:50px;
 }
 
 

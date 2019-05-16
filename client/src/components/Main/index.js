@@ -33,7 +33,7 @@ export default class Main extends React.Component {
                 <div className="container search">
                  <form onSubmit={this.search}>
                     <div className="row sm-flex">
-                        <div className="col-lg-3 col-md-6">
+                        <div className="col-lg-6 col-md-6">
                              
                                 <input
                                      required
@@ -41,36 +41,16 @@ export default class Main extends React.Component {
                                      name="origin"
                                      className="search"
                                 />
-                             
-                      
                         </div>
-                    
-                        <div className="col-lg-9 col-md-6">
-                            
-                                 <select name="destination" className="select" >
-                                     <option value="stockholm">Stockholm</option>
+                        <div className="col-lg-6 col-md-6 form-group ">                      
+                                 <select name="destination" className="custom-select">
+                                     <option selected value="stockholm">Stockholm</option>
                                     <option value="are">Åre</option>
                                     <option value="falun">Falun</option>
                                 </select>
-                           
-                      
-                        </div>
-                    
-                         <div className="col-lg-3 col-md-6">
-                                <label className="date">
-                                 Departure date<br/>
-                                <input type="date"/>
-                                </label>
-                         </div>
-                        <div className="col-lg-2 col-md-6">
-                                <label className="date">Going home date<br/>
-                                    <input type="date"/>
-                                </label>
-                        </div> 
-                        <div className="col-lg-7">
-                                {/* för att flytta ner olympiska schemat */}
                                 
-                                    <select name="currencyCode">
+
+                                    <select name="currencyCode" className="custom-select">
                                         <option value={this.state.localCurrency}>{`Local currency(${this.state.localCurrency})`}</option>
                                         <option value="USD">USD</option>
                                         <option value="EUR">EUR</option>
@@ -82,22 +62,34 @@ export default class Main extends React.Component {
                                         <option value="PLN">PLN</option>
                                         <option value="SEK">SEK</option>
                                     </select>
-                               
-                        
+                        </div>
+
+
+                        {/* <div>
+                        <div className="col-lg-3 col-md-6">
+                                <label className="date">
+                                 Departure date<br/>
+                                <input type="date"/>
+                                </label>
+                         </div>
+                        <div className="col-lg-2 col-md-6">
+                                <label className="date">Going home date<br/>
+                                    <input type="date"/>
+                                </label>
                         </div> 
-                         <div className="col-lg-3 col-md-6">
+                        </div> */}
+                        
+                         <div className="col-lg-6 col-md-6">
                              <a href="#" className="schedule">See the Olympic Schedule</a>
                         </div>
-                        <div className="col-lg-9 col-md-6">
-                        
+                        <div className="col-lg-6 col-md-6">
                         <button type="submit" className="btn btn-primary btn btn-main ">Search</button>
-                       
                          </div>
                          
                     </div>
 
                     </form>
-                    <div className="col-lg-9 col-md-6">
+                    <div className="col-lg col-md-6 sortBy">
                     <select id="sortBy" onChange={this.sortRoutes}>
                         <option value="sort">Sort By</option>
                         <option value="duration">Duration</option>
