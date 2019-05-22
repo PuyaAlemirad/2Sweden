@@ -1,11 +1,14 @@
 import React from "react"
 import Route from "../Route"
 import { get_r2r, get_CC } from "../../tools/DAO"
+import Maps from "../Map";
 
 export default class Main extends React.Component {
     constructor() {
         super()
         this.state = {
+            start:0,
+            end:0,
             routes: [],
             currencyCode:"$$$",
             localCurrency:null
@@ -29,7 +32,7 @@ export default class Main extends React.Component {
         return (
 
             <main className="main-div">
-
+              <Maps places={[this.state.start, this.state.end]}/>
                 <div className="container search">
                  <form onSubmit={this.search}>
                     <div className="row sm-flex">
@@ -178,8 +181,8 @@ export default class Main extends React.Component {
             console.log(this.state.localCurrency)
             this.setState({
                 routes: data.routes,
-                start: data.start,
-                dest: data.dest,
+                start: data.oCoords,
+                end: data.dCoords,
                 currencyCode:data.currencyCode
 
             })

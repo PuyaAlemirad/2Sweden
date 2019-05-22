@@ -244,12 +244,12 @@ body {
 }
 
 .blue {
-  background-color:blue;
+  background-color:#006699;
   color: white;
   
 }
 .white{
-  background-color:blue;
+  background-color:#006699;
   border-radius: 25px;
   font-weight: 18px;
   color: antiquewhite
@@ -259,7 +259,7 @@ body {
 
 
 .navy{
-  background-color:blue;
+  background-color:#006699;
   border-radius: 25px;
   color: antiquewhite
 }

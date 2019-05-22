@@ -39,7 +39,10 @@ export function get_r2r(origin, destination, currencyCode, callback) {
 
                 routes.push(route)
             }
+           
             return({
+                oCoords: {lat: data.places[0].lat, lng:data.places[0].lng},
+                dCoords: {lat: data.places[1].lat, lng:data.places[1].lng},
                 routes: routes,
                 currencyCode:data.routes[0].indicativePrices[0].currency
             })
