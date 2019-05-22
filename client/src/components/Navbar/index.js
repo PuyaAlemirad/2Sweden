@@ -8,10 +8,10 @@ export default function Navbar(){
      <nav className="col-lg-8 col-md-8">
         <div className="navbar bigNav">
         <ul className="ul-list">
-        <a href="#" className="n-link">Sök resor</a>
-        <a href="#" className="n-link">Läs om eventet</a>
-        <a href="#" className="n-link">Läs om våra orter</a>
-        <a href="#" className="n-link">Se rekommendationer</a>
+        <a href="index.html" className="n-link">Sök resor</a>
+        <a href="index.html" className="n-link">Läs om eventet</a>
+        <a href="index.html" className="n-link">Läs om våra orter</a>
+        <a href="index.html" className="n-link">Se rekommendationer</a>
     </ul>
         </div>
         <div><h3 className="tosweden-h3 d-md-block">2Sweden</h3></div>
@@ -21,10 +21,10 @@ export default function Navbar(){
 <div className="collapse" id="navbarToggleExternalContent">
 <div className="p-4">
 <ul className="ul-list">
-        <a href="#" className="n-link">Sök resor</a>
-        <a href="#" className="n-link">Läs om eventet</a>
-        <a href="#" className="n-link">Läs om våra orter</a>
-        <a href="#" className="n-link">Se rekommendationer</a>
+        <a href="index.html" className="n-link">Sök resor</a>
+        <a href="index.html" className="n-link">Läs om eventet</a>
+        <a href="index.html" className="n-link">Läs om våra orter</a>
+        <a href="index.html" className="n-link">Se rekommendationer</a>
     </ul>
 </div>
 </div>

@@ -20,7 +20,7 @@ export default class Main extends React.Component {
         this.setState({localCurrency:curr})
     })
        
-        
+       
     
 }
 
@@ -44,7 +44,7 @@ export default class Main extends React.Component {
                         </div>
                         <div className="col-lg-6 col-md-6 form-group ">                      
                                  <select name="destination" className="custom-select">
-                                     <option selected value="stockholm">Stockholm</option>
+                                     <option defaultValue="stockholm">Stockholm</option>
                                     <option value="are">Åre</option>
                                     <option value="falun">Falun</option>
                                 </select>
@@ -80,16 +80,13 @@ export default class Main extends React.Component {
                         </div> */}
                         
                          <div className="col-lg-6 col-md-6">
-                             <a href="#" className="schedule">See the Olympic Schedule</a>
+                             <a href="index.html" className="schedule">See the Olympic Schedule</a>
                         </div>
                         <div className="col-lg-6 col-md-6">
                         <button type="submit" className="btn btn-primary btn btn-main ">Search</button>
+                        
                          </div>
-                         
-                    </div>
-
-                    </form>
-                    <div className="col-lg col-md-6 sortBy">
+                         <div className="col-lg col-md-6 sortBy">
                     <select id="sortBy" onChange={this.sortRoutes}>
                         <option value="sort">Sort By</option>
                         <option value="duration">Duration</option>
@@ -97,11 +94,16 @@ export default class Main extends React.Component {
                         <option value="connections">Connections</option>
                     </select>
                     </div>
+                        
+                    </div>
+                   
+                    </form>
+                  
                 </div>
 
                 <div className="routes">                
 
-                    <table className="table table-dark">
+                    <table className="table">
                         <thead >
                             <tr className="segment title">
                             

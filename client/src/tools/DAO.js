@@ -67,3 +67,22 @@ export function get_CC(callback) {
         .catch(console.error)
 
 }
+
+/* export function get_GM(callback) {
+    
+    fetch(`api3/GM`)
+        // .then(d => {
+        //     console.log(d)
+        //     return d
+        // })
+        
+        .then(res => res.json())
+           .then(data => {
+            // console.log(data)
+    
+        })
+        .then(callback || (d => d))
+        .catch(console.error)
+
+}
+ */
