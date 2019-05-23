@@ -7,7 +7,10 @@ export default function Route(props) {
     let isBlue = 0;
     let list=props.segments.map(s=>s.sInfo);
     list.push(props.segments[props.segments.length-1].eInfo);
-    
+
+    let list2 = []
+    props.segments.map(s => s.path.map(p => list2.push(p)))
+    console.log(list2);
     return (
         <tbody>
         <tr 
@@ -51,7 +54,8 @@ export default function Route(props) {
                         currency={s.currency}
                         blue={isBlue++ % 2 === 1}
                     />)}
-                <Maps places={list}/>
+                <Maps places={list} path={list2}/>
+                
                     
             </td>
             
