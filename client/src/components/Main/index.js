@@ -32,7 +32,7 @@ export default class Main extends React.Component {
         return (
 
             <main className="main-div">
-              <Maps places={[this.state.start, this.state.end]}/>
+              
                 <div className="container search">
                  <form onSubmit={this.search}>
                     <div className="row sm-flex">
@@ -131,7 +131,7 @@ export default class Main extends React.Component {
 
                                 />
                             })}
-                       
+                      
                     </table>
                 
                 </div>

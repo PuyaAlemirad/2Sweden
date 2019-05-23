@@ -18,10 +18,10 @@ allPost.push(position2);
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 <GoogleMap
-  defaultZoom={8}
+  defaultZoom={2}
   defaultCenter={props.places[0]}
 >
-  {props.isMarkerShown && <Marker position={props.places[1]} />}
+  {props.isMarkerShown && <Marker position={props.places[props.places.length-1]} />}
   <Polyline path={props.places}/>
 
   <Marker position={props.places[0]}/>

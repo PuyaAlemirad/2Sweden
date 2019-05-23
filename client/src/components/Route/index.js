@@ -1,10 +1,12 @@
 import React from "react"
 import Segment from "../Segment"
 import { minutesToHM } from "../../tools/StringFormating"
-
+import Maps from "../Map";
 
 export default function Route(props) {
     let isBlue = 0;
+    let list=props.segments.map(s=>s.sCoord);
+    list.push(props.segments[props.segments.length-1].eCoord);
     return (
         <tbody>
         <tr 
@@ -35,8 +37,10 @@ export default function Route(props) {
                         <h5>{"Duration "}</h5>
                         <h5>{`Price(${props.currency})`}</h5>
                     </div>
-
-
+                   
+               {console.log(`${props.segments[0].slat}`,`${props.segments[0].slng}`)}
+               {console.log(`${props.segments[props.segments.length-1].endlat}`,`${props.segments[props.segments.length-1].endlng}`)}
+            
                     {props.segments.map(s => <Segment
                         key={s.index}
                         transport={s.transport}
@@ -47,9 +51,12 @@ export default function Route(props) {
                         currency={s.currency}
                         blue={isBlue++ % 2 === 1}
                     />)}
+                <Maps places={list}/>
+                    
             </td>
             
            </tr>
+           
            </tbody>
           
     )
