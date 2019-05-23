@@ -5,8 +5,9 @@ import Maps from "../Map";
 
 export default function Route(props) {
     let isBlue = 0;
-    let list=props.segments.map(s=>s.sCoord);
-    list.push(props.segments[props.segments.length-1].eCoord);
+    let list=props.segments.map(s=>s.sInfo);
+    list.push(props.segments[props.segments.length-1].eInfo);
+    
     return (
         <tbody>
         <tr 
@@ -38,8 +39,7 @@ export default function Route(props) {
                         <h5>{`Price(${props.currency})`}</h5>
                     </div>
                    
-               {console.log(`${props.segments[0].slat}`,`${props.segments[0].slng}`)}
-               {console.log(`${props.segments[props.segments.length-1].endlat}`,`${props.segments[props.segments.length-1].endlng}`)}
+              
             
                     {props.segments.map(s => <Segment
                         key={s.index}

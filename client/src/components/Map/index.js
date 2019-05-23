@@ -1,31 +1,55 @@
 import React from 'react';
 import {Component} from 'react';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, Polyline } from "react-google-maps"
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, Polyline, InfoWindow } from "react-google-maps"
 
 const apiKey = process.env.REACT_APP_GOOGLE_API_KEY
 
-/* let departue1 = new cordinator(route.departuePlace.lat, route.departuePlace.Ing)
-let departue2 = new cordinatoar(route.departuePlace.lat, route.departuePlace.Ing)
-allDepartures = [];
-allDepartures.push(departue1)
-allDepartures.push(departue2)  */
 
- const position1 = {lat : 5, lng: 18.0649}
-const position2 = {lat: 59.91273 ,   lng: 10.74609}
-const allPost = [];
-allPost.push(position1);
-allPost.push(position2); 
+
+ 
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
-<GoogleMap
-  defaultZoom={2}
-  defaultCenter={props.places[0]}
->
-  {props.isMarkerShown && <Marker position={props.places[props.places.length-1]} />}
-  <Polyline path={props.places}/>
+{
+  let i = 0;
+  let list=[];
+  for(let p in props.places){
+    
+     let icon= 
+{     
+  url: (p == 0) ? "http://maps.google.com/mapfiles/ms/icons/green-dot.png" : "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+  
+}
+list.push(<Marker
+position= {props.places[p].coords}
+title={props.places[p].name}
+icon={icon}
 
-  <Marker position={props.places[0]}/>
-</GoogleMap>
+key={p}
+
+/>)
+
+
+  }
+  return (<GoogleMap
+  defaultZoom={2}
+  defaultCenter={props.places[0].coords}
+>
+  <Polyline path={props.places.map(s=>s.coords)}/>
+  
+  {list}
+  {/* {props.isMarkerShown && <Marker position={props.places[props.places.length-1].coords} />}
+  
+  <Marker position={props.places[0].coords}>
+
+  
+  </Marker>
+  {props.places.map(p => <InfoWindow
+    key={i++}
+    defaultPosition={p.coords}
+  >
+    <p>{p.name}</p>
+  </InfoWindow>)} */}
+</GoogleMap>)}
 ))
 
 class Maps extends Component {

@@ -1,7 +1,7 @@
 import React from "react"
 import Route from "../Route"
 import { get_r2r, get_CC } from "../../tools/DAO"
-import Maps from "../Map";
+
 
 export default class Main extends React.Component {
     constructor() {

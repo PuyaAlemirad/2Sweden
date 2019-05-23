@@ -28,8 +28,14 @@ export function get_r2r(origin, destination, currencyCode, callback) {
                         transport: data.vehicles[r.segments[s].vehicle].name,
                         from: data.places[r.segments[s].depPlace].shortName,
                         to: data.places[r.segments[s].arrPlace].shortName,
-                        sCoord: {lat: data.places[r.segments[s].depPlace].lat, lng:data.places[r.segments[s].depPlace].lng },
-                        eCoord:  {lat: data.places[r.segments[s].arrPlace].lat, lng:data.places[r.segments[s].arrPlace].lng },
+                        sInfo: {
+                            coords:{lat: data.places[r.segments[s].depPlace].lat, lng: data.places[r.segments[s].depPlace].lng }, 
+                            name:data.places[r.segments[s].depPlace].shortName
+                        },
+                        eInfo:{
+                            coords:{lat: data.places[r.segments[s].arrPlace].lat, lng: data.places[r.segments[s].arrPlace].lng }, 
+                            name:data.places[r.segments[s].arrPlace].shortName
+                        },
                         price: (r.segments[s].indicativePrices)?r.segments[s].indicativePrices[0].price : "-",
                         currency: (r.segments[s].indicativePrices)?r.segments[s].indicativePrices[0].currency:"",
                         duration: r.segments[s].transitDuration,
