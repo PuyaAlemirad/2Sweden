@@ -16,9 +16,10 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     
      let icon= 
 {     
-  url: (p === 0) ? "http://maps.google.com/mapfiles/ms/icons/green-dot.png" : "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
-  
+  url:  (p === 0) ? "http://maps.google.com/mapfiles/ms/icons/green-dot.png":"http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+ 
 }
+console.log(p)
 list.push(<Marker
 position= {props.places[p].coords}
 title={props.places[p].name}
@@ -33,7 +34,7 @@ key={p}
   defaultZoom={2}
   defaultCenter={props.places[0].coords}
 >
-  <Polyline path={props.places.map(s=>s.coords)}/>
+  
   <Polyline path={props.path}/>
   
   {list}
@@ -50,6 +51,7 @@ class Maps extends Component {
 <MyMapComponent
   places={this.props.places}
   isMarkerShown
+  path={this.props.path}
   googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${apiKey}&v=3.exp&libraries=geometry,drawing,places`}
   loadingElement={<div style={{ height: `100%` }} />}
   containerElement={<div style={{ height: `400px` }} />}

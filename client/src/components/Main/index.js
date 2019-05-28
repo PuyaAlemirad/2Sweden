@@ -29,6 +29,7 @@ export default class Main extends React.Component {
 
     render() {
         let i = 0; //Each Route needs a unique key.
+   
         return (
 
             <main className="main-div">
@@ -42,7 +43,7 @@ export default class Main extends React.Component {
                                      required
                                      placeholder="🔍From"
                                      name="origin"
-                                     className="search"
+                                     className="search form-control"
                                 />
                         </div>
                         <div className="col-lg-6 col-md-6 form-group ">                      
@@ -109,7 +110,6 @@ export default class Main extends React.Component {
                     <table className="table">
                         <thead >
                             <tr className="segment title">
-                            
                                 <th scope="col">From --> To </th>
                                 <th scope="col">Transport </th>
                                 <th scope="col">Duration </th>

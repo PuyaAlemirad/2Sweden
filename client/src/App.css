@@ -21,6 +21,11 @@ body {
   
 }
 
+.fa fa-arrow-circle-down{
+
+text-align: left;
+  
+}
 
 
 .container-fluid {
@@ -232,9 +237,10 @@ body {
 .segment.title {
   background-color: lightgray;
   padding: 1px 0;
-  border-bottom: 1px solid gray;
+  
   border-right: none;
  text-align-last: center;
+ 
 }
 
 .segment .col {
@@ -268,7 +274,7 @@ body {
   
   
   border-radius: 25px;
- border-end-end-radius: 25px;
+
 text-align: center;
 
 }

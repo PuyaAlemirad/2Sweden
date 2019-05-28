@@ -12,6 +12,7 @@ export default function Route(props) {
     props.segments.map(s => s.path.map(p => list2.push(p)))
     console.log(list2);
     return (
+      
         <tbody>
         <tr 
             data-target={`#table${props.dataKey}`}
@@ -21,8 +22,14 @@ export default function Route(props) {
         >
             
         
-           
-                <td className="col glyphicon glyphicon-triangle-bottom"><span/> { props.segments[0].from} - {props.segments[props.segments.length-1].to}</td>
+                <td className="col " >
+                    <i 
+                        className={"fa fa-caret-right"} 
+                        
+                        style={{fontSize:"18px", position:"relative", float:"left"}}
+                    />
+                    { props.segments[0].from} - {props.segments[props.segments.length-1].to}
+                </td>
                 <td className="col">{props.segments.map(s=>s.transport).join(" - ")}</td>
                 <td className="col">{minutesToHM(props.duration)}</td>
                 <td>{props.price}</td>
@@ -62,6 +69,8 @@ export default function Route(props) {
            </tr>
            
            </tbody>
-          
+            
+      
     )
+    
 }
