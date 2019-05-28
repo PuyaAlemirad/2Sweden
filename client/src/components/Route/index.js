@@ -7,8 +7,16 @@ export default function Route(props) {
     let isBlue = 0;
     let list=props.segments.map(s=>s.sInfo);
     list.push(props.segments[props.segments.length-1].eInfo);
+
+    let list2 = []
+    props.segments.map(s => s.path.map(p => list2.push(p)))
+
+    document.getElementsByTagName('I').onClick = function() {
+        this.classList.toggle("fa fa-caret-down");
+    }
     
     return (
+      
         <tbody>
         <tr 
             data-target={`#table${props.dataKey}`}
@@ -18,8 +26,14 @@ export default function Route(props) {
         >
             
         
-           
-                <td className="col glyphicon glyphicon-triangle-bottom"><span/> { props.segments[0].from} - {props.segments[props.segments.length-1].to}</td>
+                <td className="col " >
+                    <i 
+                        className={"fa fa-caret-right"} 
+                        
+                        style={{fontSize:"18px", position:"relative", float:"left"}}
+                    />
+                    { props.segments[0].from} - {props.segments[props.segments.length-1].to}
+                </td>
                 <td className="col">{props.segments.map(s=>s.transport).join(" - ")}</td>
                 <td className="col">{minutesToHM(props.duration)}</td>
                 <td>{props.price}</td>
@@ -51,13 +65,16 @@ export default function Route(props) {
                         currency={s.currency}
                         blue={isBlue++ % 2 === 1}
                     />)}
-                <Maps places={list}/>
+                <Maps places={list} path={list2}/>
+                
                     
             </td>
             
            </tr>
            
            </tbody>
-          
+            
+      
     )
+    
 }

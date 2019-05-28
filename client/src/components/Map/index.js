@@ -1,24 +1,25 @@
 import React from 'react';
 import {Component} from 'react';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, Polyline, InfoWindow } from "react-google-maps"
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, Polyline} from "react-google-maps";
 
 const apiKey = process.env.REACT_APP_GOOGLE_API_KEY
 
 
 
- 
+
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 {
-  let i = 0;
+  
   let list=[];
   for(let p in props.places){
     
      let icon= 
 {     
-  url: (p == 0) ? "http://maps.google.com/mapfiles/ms/icons/green-dot.png" : "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
-  
+  url:  (p === 0) ? "http://maps.google.com/mapfiles/ms/icons/green-dot.png":"http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+ 
 }
+console.log(p)
 list.push(<Marker
 position= {props.places[p].coords}
 title={props.places[p].name}
@@ -28,27 +29,16 @@ key={p}
 
 />)
 
-
   }
   return (<GoogleMap
   defaultZoom={2}
   defaultCenter={props.places[0].coords}
 >
-  <Polyline path={props.places.map(s=>s.coords)}/>
+  
+  <Polyline path={props.path} options={{strokeColor: 'orange',strokeWeight: 6}}/>
   
   {list}
-  {/* {props.isMarkerShown && <Marker position={props.places[props.places.length-1].coords} />}
-  
-  <Marker position={props.places[0].coords}>
-
-  
-  </Marker>
-  {props.places.map(p => <InfoWindow
-    key={i++}
-    defaultPosition={p.coords}
-  >
-    <p>{p.name}</p>
-  </InfoWindow>)} */}
+}
 </GoogleMap>)}
 ))
 
@@ -61,6 +51,7 @@ class Maps extends Component {
 <MyMapComponent
   places={this.props.places}
   isMarkerShown
+  path={this.props.path}
   googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${apiKey}&v=3.exp&libraries=geometry,drawing,places`}
   loadingElement={<div style={{ height: `100%` }} />}
   containerElement={<div style={{ height: `400px` }} />}

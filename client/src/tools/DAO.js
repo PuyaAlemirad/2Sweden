@@ -1,3 +1,5 @@
+const decodePolyline = require('decode-google-map-polyline');
+
 export function get_r2r(origin, destination, currencyCode, callback) {
     return fetch(`api/r2r/${origin}/${destination}/${currencyCode}`)
         // .then(d => {
@@ -7,7 +9,7 @@ export function get_r2r(origin, destination, currencyCode, callback) {
         
         .then(res => res.json())
            .then(data => {
-            console.log(data) // for debugging
+           // console.log(data) // for debugging
 
             let routes = []
 
@@ -15,6 +17,7 @@ export function get_r2r(origin, destination, currencyCode, callback) {
                 // console.log(r)  //For debugging
 
                 let route = {
+                   
                     duration: r.totalDuration,
                     price: (r.indicativePrices)?r.indicativePrices[0].price:"-", //If price is unknown, set to "-".
                     currency: (r.indicativePrices)?r.indicativePrices[0].currency:"", //If no price, set currency to empty string.
@@ -24,7 +27,10 @@ export function get_r2r(origin, destination, currencyCode, callback) {
                 }
 
                 for (let s in r.segments) {
+                   
+                                
                     let segment = {
+                         path:(r.segments[s].segmentKind==="surface")? decodePolyline(r.segments[s].path) :[{lat: data.places[r.segments[s].depPlace].lat, lng: data.places[r.segments[s].depPlace].lng },{lat: data.places[r.segments[s].arrPlace].lat, lng: data.places[r.segments[s].arrPlace].lng}],
                         transport: data.vehicles[r.segments[s].vehicle].name,
                         from: data.places[r.segments[s].depPlace].shortName,
                         to: data.places[r.segments[s].arrPlace].shortName,
