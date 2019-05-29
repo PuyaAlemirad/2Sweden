@@ -2,6 +2,7 @@
    Blå #006699
 */
 
+
 * {
   margin: 0px;
   padding: 0px;
@@ -144,6 +145,7 @@ body {
 .form {
   display: flex;
   justify-content: space-between;
+  
 }
 
 .searchBar {
@@ -152,12 +154,30 @@ body {
   min-width: 20%;
 }
 
+.clone {
+	
+}
+
+.scrollable{
+	position:relative;
+	max-width:740px;
+	margin:auto;
+	overflow:hidden;
+	
+
+}
+.table-wrap{
+  width:100%;
+	overflow:auto;
+
+
+}
 .olympicTable {
   border: 0px hidden;
   border-spacing: 15px;
-  overflow-x: auto;
+ border-collapse: separate;
   height: 100%;
-  table-layout: auto;
+  
 }
 
 .olympicTable td {
@@ -175,11 +195,21 @@ body {
 
 }
 .olympicTable img{
-  height: 130px;
-  width:120px;
+  height: 140px;
+  width:130px;
   border-radius: 25px;
 
 }
+.fixed-side{
+  
+visibility: visible;
+position:absolute;
+	top:auto;
+	left:0;
+	pointer-events:none;
+  border-color: transparent;
+}
+
 
 ul li {
   list-style-type: none;
