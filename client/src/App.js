@@ -3,9 +3,11 @@ import './App.css';
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+const events = require("./tools/Events.json");
 
 
 function App() {
+  // console.log(Object.entries(events).flatMap(e => e[1].events));
   return (
     <div className="container-fluid">
 
@@ -20,6 +22,7 @@ function App() {
     <div className="row">
       <div className="col-lg col-md col-sm"><Main/></div>
     </div>
+
 
     <div className="row">
     <div className="col-lg col-md col-sm"><Footer/></div>

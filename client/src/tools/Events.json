@@ -1,0 +1,617 @@
+{
+
+    "stockholm": {
+        "location": "stockholm, sweden",
+        "events": [{
+                "name": "Cermonies",
+                "dates": [{
+                    "isMedal": false,
+                    "date": "09/02/2024"
+                }]
+            },
+
+            {
+
+                "name": "Speed Skating",
+                "dates": [{
+                        "isMedal": true,
+                        "date": "10/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "11/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "12/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "13/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "14/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "15/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "16/02/2024"
+                    }
+
+                ]
+            },
+            {
+                "name": "Short Track Speed Skating",
+                "dates": [{
+                        "date": "10/02/2024",
+                        "isMedal": true
+
+                    },
+                    {
+                        "date": "13/02/2024",
+                        "isMedal": true
+
+                    },
+                    {
+                        "date": "17/02/2024",
+                        "isMedal": true
+
+                    },
+                    {
+                        "date": "20/02/2024",
+                        "isMedal": true
+
+                    }
+                ]
+            },
+            {
+                "name": "Curling",
+                "dates": [{
+                        "isMedal": false,
+                        "date": "08/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "09/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "10/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "11/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "12/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "13/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "14/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "15/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "16/02/2024"
+                    },
+
+                    {
+                        "isMedal": false,
+                        "date": "17/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "18/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "19/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "20/02/2024"
+                    }
+                ]
+            },
+            {
+                "name": "Figure Skating",
+                "dates": [{
+                        "isMedal": false,
+                        "date": "09/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "11/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "12/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "14/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "15/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "16/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "17/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "19/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "20/02/2024"
+                    }
+                ]
+            },
+            {
+                "name": "Ice Hockey",
+                "dates": [{
+                        "isMedal": false,
+                        "date": "10/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "11/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "12/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "13/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "14/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "15/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "16/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "17/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "18/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "19/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "20/02/2024"
+                    }
+                ]
+            }
+        ]
+
+    },
+    "falun": {
+        "location": "falun, sweden",
+        "events": [{
+                "name": "Biathlon",
+                "dates": [{
+                        "isMedal": false,
+                        "date": "07/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "08/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "10/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "11/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "12/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "13/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "15/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "16/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "17/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "18/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "19/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "20/02/2024"
+                    }
+                ]
+            },
+            {
+                "name": "Cross-Country Skiing",
+                "dates": [{
+                        "isMedal": true,
+                        "date": "10/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "11/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "13/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "15/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "16/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "17/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "18/02/2024"
+                    }
+                ]
+            },
+            {
+                "name": "Nordic Combined",
+                "dates": [{
+                        "isMedal": false,
+                        "date": "11/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "12/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "13/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "14/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "17/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "18/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "19/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "20/02/2024"
+                    }
+                ]
+            },
+            {
+                "name": "Ski Jumping",
+                "dates": [{
+                        "isMedal": false,
+                        "date": "07/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "08/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "10/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "11/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "12/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "14/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "15/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "16/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "17/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "18/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "19/02/2024"
+                    }
+                ]
+
+
+            }
+        ]
+    },
+    "åre": {
+        "location": "are, sweden",
+        "events": [{
+                "name": "Alpine Skiing",
+                "dates": [{
+                        "isMedal": false,
+                        "date": "08/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "09/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "10/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "12/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "13/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "15/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "16/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "17/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "18/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "19/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "20/02/2024"
+                    }
+                ]
+            },
+            {
+                "name": "Bobsleigh",
+                "dates": [{
+                        "isMedal": false,
+                        "date": "15/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "16/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "17/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "18/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "19/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "20/02/2024"
+                    }
+                ]
+            },
+            {
+                "name": "FreeStyle Skiing",
+                "dates": [{
+                        "isMedal": false,
+                        "date": "09/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "11/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "12/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "15/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "16/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "17/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "18/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "19/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "20/02/2024"
+                    }
+                ]
+            },
+            {
+                "name": "Luge",
+                "dates": [{
+                        "isMedal": false,
+                        "date": "07/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "08/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "09/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "10/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "11/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "12/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "13/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "14/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "15/02/2024"
+                    }
+                ]
+            },
+            {
+                "name": "Skeleton",
+                "dates": [{
+                        "isMedal": false,
+                        "date": "12/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "13/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "14/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "15/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "16/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "17/02/2024"
+                    }
+                ]
+            },
+            {
+                "name": "Snowboard",
+                "dates": [{
+                        "isMedal": false,
+                        "date": "10/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "11/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "12/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "13/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "14/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "15/02/2024"
+                    },
+                    {
+                        "isMedal": true,
+                        "date": "16/02/2024"
+                    },
+                    {
+                        "isMedal": false,
+                        "date": "19/02/2024"
+                    }
+                ]
+            }
+        ]
+    }
+}
