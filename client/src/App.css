@@ -33,7 +33,7 @@ body {
   grid-gap: 1em;
   grid-template-columns: auto;
   grid-template-rows: auto auto auto;
-  grid-template-areas: "header" "main" "main" "main" "footer";
+  grid-template-areas: "header" "main" "footer";
   background-image: linear-gradient(#006699, #ffcc00, #006699);
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -175,6 +175,7 @@ body {
 .olympicTable {
   border: 0px hidden;
   border-spacing: 15px;
+ 
  border-collapse: separate;
   height: 100%;
   
@@ -198,6 +199,7 @@ body {
   height: 140px;
   width:130px;
   border-radius: 25px;
+  
 
 }
 .fixed-side{
@@ -206,11 +208,17 @@ visibility: visible;
 position:absolute;
 	top:auto;
 	left:0;
-	pointer-events:none;
-  border-color: transparent;
+  pointer-events:none;
+  background-color:#ffcc00;
+  
+  border: none;
 }
 
-
+.fixed{
+  visibility: none;
+  
+  border: none;
+}
 ul li {
   list-style-type: none;
 }

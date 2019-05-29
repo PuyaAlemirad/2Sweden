@@ -2,8 +2,7 @@ import React from "react"
 import Route from "../Route"
 
 import { get_r2r, get_CC } from "../../tools/DAO"
-import AliceCarousel from 'react-alice-carousel';
-import "react-alice-carousel/lib/alice-carousel.css";
+
 
 
 
@@ -25,21 +24,6 @@ export default class Main extends React.Component {
             end: 0,
             routes: [],
             currencyCode: "$$$",
-            galleryItems: [<td onClick={content}></td>,
-                <td onClick={content}>Curling</td>,
-                <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>,
-                <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>,
-                <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>,
-                <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>,
-                <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>,
-                <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>,
-                <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>,
-                <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>,
-                <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>,
-                <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>,
-                <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>,
-                <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>,
-],
             localCurrency: null
         }
 
@@ -56,20 +40,7 @@ export default class Main extends React.Component {
 
 
     }
-    responsive = {
-        0: { items: 1 },
-        1024: { items: 2 },
-      }
-     
-      onSlideChange(e) {
-        console.debug('Item`s position during a change: ', e.item)
-        console.debug('Slide`s position during a change: ', e.slide)
-      }
-     
-      onSlideChanged(e) {
-        console.debug('Item`s position after changes: ', e.item)
-        console.debug('Slide`s position after changes: ', e.slide)
-      }
+   
 
     render() {
         let i = 0; //Each Route needs a unique key.
@@ -167,7 +138,7 @@ export default class Main extends React.Component {
                             <table className="olympicTable" border="1px" cellSpacing="50spx" >
                                 <thead>
                                     < tr>
-                                        <th>Stad</th>
+                                        <th class="fixed"></th>
                                         <th>Day 1</th>
                                         <th>Day 2</th>
                                         <th>Day 3</th>
