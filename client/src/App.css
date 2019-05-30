@@ -23,8 +23,29 @@ body {
   height: 100%;
 }
 
+
+.blue {
+  background-color: #006699;
+  color: white;
+}
+.yellow {
+  color: black;
+  background-color: #ffcc00;
+}
+.red {
+  background-color: white;
+}
+
+
+
+
 .fa fa-arrow-circle-down {
   text-align: left;
+}
+
+.my-city-list {
+  display: grid;
+  grid-template-rows: 50px 1fr 1fr 1fr 50px;
 }
 
 .container-fluid {
@@ -113,10 +134,7 @@ body {
   display: block;
 }
 
-.yellow {
-  color: black;
-  background-color: #ffcc00;
-}
+
 
 @media (min-width: 700px) {
   .bigNav {
@@ -295,10 +313,6 @@ li {
   font-weight: 16px;
 }
 
-.blue {
-  background-color: #006699;
-  color: white;
-}
 
 .white {
   background-color: #006699;
