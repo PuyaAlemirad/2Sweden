@@ -1,9 +1,12 @@
 import React from "react"
 import Route from "../Route"
+import AliceCarousel from 'react-alice-carousel';
+import "react-alice-carousel/lib/alice-carousel.css";
 
 import { get_r2r, get_CC } from "../../tools/DAO"
+import DayOfEvents from "../DayOfEvents";
 
-
+const events = require("../../tools/Events.json")
 
 
 export default class Main extends React.Component {
@@ -133,85 +136,19 @@ export default class Main extends React.Component {
 
 
                         </div>
-                        <div className="scrollable">
-                            <div className="table-wrap">
-                            <table className="olympicTable" border="1px" cellSpacing="50spx" >
-                                <thead>
-                                    < tr>
-                                        <th class="fixed"></th>
-                                        <th>Day 1</th>
-                                        <th>Day 2</th>
-                                        <th>Day 3</th>
-                                        <th>Day 4</th>
-                                        <th>Day 5</th>
-                                        <th>Day 6</th>
-                                        <th>Day 7</th>
-                                        <th>Day 8</th>
-                                        <th>Day 9</th>
-                                        <th>Day 10</th>
-                                        <th>Day 11</th>
-                                        <th>Day 12</th>
-                                        <th>Day 13</th>
-                                        <th>Day 14</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th class="fixed-side"><img src={logo} height="100px" width="100px" /></th>
-                                         <td onClick={content}></td>
-                                        <td onClick={content}>{}</td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td> 
-                                         
-                                         
-                                    </tr>
-                                    <tr>
-                                        <th class="fixed-side"><img src={åre} height="100px" width="100px" /></th>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Luge</li></ul></td>
-                                        <td onClick={content}>Alpline Skiing Luge</td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Jumping</li><li> Ski Jumping</li></ul></td>
-                                    </tr>
-                                    <tr>
-                                        <th class="fixed-side"><img src={falun} height="130px" width="100px" /></th>
-                                        <td onClick={content}><ul><li>Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li></li><li> </li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Cross Country Skiing</li><li> Nordic Combined</li><li> Ski Jumping</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Luge</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Luge</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Luge</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Luge</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Luge</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Luge</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Luge</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Luge</li></ul></td>
-                                        <td onClick={content}><ul><li>Biathion</li><li> Luge</li></ul></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div> 
+                        <div>
+                            <AliceCarousel 
+                                mouseDragEnabled
+                                responsive={{
+                                    0: {items:2},
+                                    500: {items:5},
+                                    1024: {items:5}
+                                }}
+                                items={events.map(d => <DayOfEvents date={d.date} events={d.events} />)}
+                            >
+
+                                
+                            </AliceCarousel>
                       </div>
                     </form>
 
