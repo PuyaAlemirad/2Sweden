@@ -20,7 +20,11 @@ export default function DayOfEvents(props) {
 
     return (
         <div className="h-100 mx-1">
-            <h6 className="text-center">{props.date}</h6>
+            <div>
+                <h6 className="text-center">{props.date}</h6>
+                <h6 className="text-center">{`(Day ${Number.parseInt(props.date.substring(0,2))-6})`}</h6>
+
+            </div>
             <div className="list-group my-city-list h-100">
 
             <button 

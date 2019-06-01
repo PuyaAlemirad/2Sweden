@@ -45,7 +45,7 @@ body {
 
 .my-city-list {
   display: grid;
-  grid-template-rows: 50px 1fr 1fr 1fr 50px;
+  grid-template-rows: 50px 1fr 1fr 1fr 60px;
 }
 
 .my-rounded {
