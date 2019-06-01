@@ -9,18 +9,12 @@ function App() {
   return (
     <div className="container-fluid">
 
-      <div className="row">
-        <div className="col-lg col-md col-sm"><Header /></div>
-      </div>
+        <Header />
 
-      <div className="row">
-        <div className="col-lg col-md col-sm"><Main /></div>
-      </div>
+        <Main />
 
 
-      <div className="row">
-        <div className="col-lg col-md col-sm"><Footer /></div>
-      </div>
+        <Footer />
     </div>
   );
 }

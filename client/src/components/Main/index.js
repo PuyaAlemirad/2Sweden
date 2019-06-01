@@ -62,30 +62,31 @@ export default class Main extends React.Component {
         eventNamesList = Object.keys(eventNamesList)
 
         return (
-            <main className="main-div">
-                <div className="container" >
-                    <div className="row form">
-                        <input
-                            required
-                            placeholder="🔍From"
-                            name="origin"
-                            className="search form-control"
-                        />
-                        <div className="form-group">
-                            <select name="currencyCode" className="custom-select">
-                                <option value={this.state.localCurrency}>{`Local currency(${this.state.localCurrency})`}</option>
-                                <option value="USD">USD</option>
-                                <option value="EUR">EUR</option>
-                                <option value="CAD">CAD</option>
-                                <option value="CHF">CHF</option>
-                                <option value="GBP">GBP</option>
-                                <option value="HUF">HUF</option>
-                                <option value="NOK">NOK</option>
-                                <option value="PLN">PLN</option>
-                                <option value="SEK">SEK</option>
-                            </select>
+            <main className="yellow my-rounded py-3 container my-3">
+                    <div className="row">
+                        <div className="col-12 col-md-3">
+                            <input
+                                required
+                                placeholder="🔍From"
+                                name="origin"
+                                className="search form-control"
+                            />
+                            <div className="form-group w-100">
+                                <select name="currencyCode" className="custom-select">
+                                    <option value={this.state.localCurrency}>{`Local currency(${this.state.localCurrency})`}</option>
+                                    <option value="USD">USD</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="CAD">CAD</option>
+                                    <option value="CHF">CHF</option>
+                                    <option value="GBP">GBP</option>
+                                    <option value="HUF">HUF</option>
+                                    <option value="NOK">NOK</option>
+                                    <option value="PLN">PLN</option>
+                                    <option value="SEK">SEK</option>
+                                </select>
+                            </div>
                         </div>
-                        <div className="btn-group btn-group-toggle overflow-auto">
+                        <div className="btn-group btn-group-toggle overflow-auto col-12 col-md-9">
                             {eventNamesList.map((e, ei) => 
                                 <button key={ei} onClick={ev => this.highlight(ev)} value={e} type="button" className="btn btn-primary" data-toggle="button">
                                     {e}
@@ -93,7 +94,7 @@ export default class Main extends React.Component {
                             }
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="row py-2">
                         <Carousel
                             responsive={{
                                 desktop: {
@@ -106,7 +107,7 @@ export default class Main extends React.Component {
                                 },
                                 mobile: {
                                     breakpoint: { max: 576, min: 0 },
-                                    items: 2
+                                    items: 1
                                 }
                             }}
                         >
@@ -119,7 +120,6 @@ export default class Main extends React.Component {
                         <button type="submit" className="btn btn-primary btn btn-main ">Search</button>
                     </div>
 
-                </div>
 
 
             </main>

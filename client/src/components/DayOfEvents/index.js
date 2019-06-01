@@ -5,7 +5,7 @@ function CityButton(props) {
     let i = 1
 
     return (
-        <button type="button" data-toggle="list" className={"list-group-item list-group-item-action my-1 my-rounded blue"} id={`${props.day}${props.city[0]}`}>
+        <button type="button" data-toggle="list" className={"list-group-item list-group-item-action my-1 my-rounded blue overflow-auto"} id={`${props.day}${props.city[0]}`}>
                 {props.events.map(e => 
                     <div className="d-flex justify-content-between py-1" key={i++}>
                         <p className={"m-0"+(props.highlights.includes(e.name)? " highlight": "")}>{e.name}</p>
