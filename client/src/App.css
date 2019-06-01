@@ -48,6 +48,18 @@ body {
   grid-template-rows: 50px 1fr 1fr 1fr 50px;
 }
 
+.my-rounded {
+  border-radius: 20px;
+}
+
+.blue.active {
+  background-color: darkblue;
+}
+
+.highlight {
+  color: red;
+}
+
 .container-fluid {
   height: 100%;
   display: grid;

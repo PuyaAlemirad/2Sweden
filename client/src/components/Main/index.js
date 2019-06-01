@@ -18,7 +18,8 @@ export default class Main extends React.Component {
             end: 0,
             routes: [],
             currencyCode: "$$$",
-            localCurrency: null
+            localCurrency: null,
+            highlights: []
         }
 
         //  this.search = this.search.bind(this)
@@ -35,9 +36,30 @@ export default class Main extends React.Component {
 
     }
 
+    highlight(event) {
+        const target = event.target
+        const value = target.value
+        let highlights = this.state.highlights
+
+        highlights = highlights.filter(e => e !== value)
+
+        
+        if (target.className.includes("active"))
+            highlights.push(value)
+        
+        
+        this.setState({highlights: highlights})
+        console.log(highlights)
+    }
+
 
     render() {
         let i = 0 //Each Route needs a unique key.
+        let eventNamesList = {}
+
+        events.flatMap(day => Object.values(day.events))
+            .forEach(city => city.forEach(event => eventNamesList[event.name] = ""))
+        eventNamesList = Object.keys(eventNamesList)
 
         return (
             <main className="main-div">
@@ -63,26 +85,33 @@ export default class Main extends React.Component {
                                 <option value="SEK">SEK</option>
                             </select>
                         </div>
+                        <div className="btn-group btn-group-toggle overflow-auto">
+                            {eventNamesList.map((e, ei) => 
+                                <button key={ei} onClick={ev => this.highlight(ev)} value={e} type="button" className="btn btn-primary" data-toggle="button">
+                                    {e}
+                                </button>)
+                            }
+                        </div>
                     </div>
                     <div className="row">
-                        <Carousel 
+                        <Carousel
                             responsive={{
                                 desktop: {
                                     breakpoint: { max: 3000, min: 1024 },
                                     items: 5
-                                  },
-                                  tablet: {
+                                },
+                                tablet: {
                                     breakpoint: { max: 1024, min: 576 },
                                     items: 3
-                                  },
-                                  mobile: {
+                                },
+                                mobile: {
                                     breakpoint: { max: 576, min: 0 },
                                     items: 2
-                                  }
+                                }
                             }}
                         >
-                            {events.map(d => 
-                                <DayOfEvents date={d.date} events={d.events} key={i++} />    
+                            {events.map(d =>
+                                <DayOfEvents date={d.date} events={d.events} key={i++} highlights={this.state.highlights} />
                             )}
                         </Carousel>
                     </div>
