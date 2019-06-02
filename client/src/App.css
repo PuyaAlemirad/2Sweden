@@ -122,15 +122,15 @@ body {
 }
 
 .form {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  
+   */
 }
 
 .searchBar {
-  padding-top: 25px;
+  /* padding-top: 25px; */
  
-  min-width: 20%;
+  /* min-width: 20%; */
 }
 
 .clone {

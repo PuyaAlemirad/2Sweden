@@ -62,14 +62,14 @@ export default class Main extends React.Component {
         eventNamesList = Object.keys(eventNamesList)
 
         return (
-            <main className="yellow my-rounded py-3 container my-3">
-                    <div className="row">
+            <div className="yellow my-rounded py-3 container my-3">
+                    <form name="search" className="row">
                         <div className="col-12 col-md-3">
                             <input
                                 required
                                 placeholder="🔍From"
                                 name="origin"
-                                className="search form-control"
+                                className="form-control"
                             />
                             <div className="form-group w-100">
                                 <select name="currencyCode" className="custom-select">
@@ -93,7 +93,7 @@ export default class Main extends React.Component {
                                 </button>)
                             }
                         </div>
-                    </div>
+                    </form>
                     <div className="row py-2">
                         <Carousel
                             responsive={{
@@ -107,7 +107,7 @@ export default class Main extends React.Component {
                                 },
                                 mobile: {
                                     breakpoint: { max: 576, min: 0 },
-                                    items: 1
+                                    items: 2
                                 }
                             }}
                         >
@@ -117,12 +117,9 @@ export default class Main extends React.Component {
                         </Carousel>
                     </div>
                     <div className="row">
-                        <button type="submit" className="btn btn-primary btn btn-main ">Search</button>
+                        <button onClick={() => this.search()} className="btn btn-primary btn btn-main ">Search</button>
                     </div>
-
-
-
-            </main>
+            </div>
         )
     }
 
@@ -152,11 +149,32 @@ export default class Main extends React.Component {
     }
 
     search(form) {
+        const searchForm = document.forms["search"]
+        const dayForms = events.map((day, dayIndex) => document.forms[`day-${dayIndex+1}`])
+        
+        const origin = searchForm["origin"].value
+        const currency = searchForm["currencyCode"].value
+        let stops = {}
+
+        const choices = ["none", "Stockholm","Åre","Falun"]
+        dayForms.map(f => {
+            for (let c of choices) {
+                if(f[c].className.includes("active"))
+                    return c
+            }
+        }).forEach((c, ci) => {
+            if(c !== "none")
+                stops[ci+1] = c
+        })
+
+        console.log(stops)
+
+
         return
         form.preventDefault()
 
         let destination = form.target.elements["destination"].value
-        let origin = String(form.target.elements["origin"].value).trim()
+        // let origin = String(form.target.elements["origin"].value).trim()
         let currencyCode = form.target.elements["currencyCode"].value
 
 

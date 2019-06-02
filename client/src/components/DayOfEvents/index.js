@@ -5,7 +5,7 @@ function CityButton(props) {
     let i = 1
 
     return (
-        <button type="button" data-toggle="list" className={"list-group-item list-group-item-action my-1 my-rounded blue overflow-auto"} id={`${props.day}${props.city[0]}`}>
+        <button name={props.city} type="button" data-toggle="list" className={"list-group-item list-group-item-action my-1 my-rounded blue overflow-auto"} id={`${props.day}${props.city[0]}`}>
                 {props.events.map(e => 
                     <div className="d-flex justify-content-between py-1" key={i++}>
                         <p className={"m-0"+(props.highlights.includes(e.name)? " highlight": "")}>{e.name}</p>
@@ -17,17 +17,19 @@ function CityButton(props) {
 } 
 
 export default function DayOfEvents(props) {
+    const dayNo = Number.parseInt(props.date.substring(0,2))-6
 
     return (
-        <div className="h-100 mx-1">
+        <form name={`day-${dayNo}`} className="h-100 mx-1">
             <div>
                 <h6 className="text-center">{props.date}</h6>
-                <h6 className="text-center">{`(Day ${Number.parseInt(props.date.substring(0,2))-6})`}</h6>
+                <h6 className="text-center">{`(Day ${dayNo})`}</h6>
 
             </div>
             <div className="list-group my-city-list h-100">
 
-            <button 
+            <button
+                name="none"
                 type="button" 
                 data-toggle="list" 
                 className={"list-group-item list-group-item-action list-group-item-danger active my-rounded"}
@@ -55,6 +57,6 @@ export default function DayOfEvents(props) {
                         events={props.events.f}
                     />
             </div>
-        </div>
+        </form>
     )
 }
