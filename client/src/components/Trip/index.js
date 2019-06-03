@@ -9,7 +9,8 @@ export default function Trip(props) {
         <div>
             <button className="btn btn-block btn-secondary my-2"
             data-target={`#trip${props.dataKey}`}
-            data-toggle="collapse">{capitalize(props.start)}-->{capitalize(props.stop)}</button>
+            data-toggle="collapse">
+            <p>{`${capitalize(props.start)}   -->   ${capitalize(props.stop)}`}</p></button>
 
 
             <table id={`trip${props.dataKey}`} className="table collapse">
