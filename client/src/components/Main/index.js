@@ -154,6 +154,7 @@ export default class Main extends React.Component {
         
         const origin = searchForm["origin"].value
         const currency = searchForm["currencyCode"].value
+
         let stops = {}
 
         const choices = ["none", "Stockholm","Åre","Falun"]
@@ -163,8 +164,11 @@ export default class Main extends React.Component {
                     return c
             }
         }).forEach((c, ci) => {
-            if(c !== "none")
-                stops[ci+1] = c
+            if(c !== "none") {
+                const x = Object.values(stops)
+                if (x[x.length-1] !== c)
+                    stops[ci+1] = c
+            }
         })
 
         console.log(stops)
