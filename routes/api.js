@@ -12,9 +12,12 @@ router.get("/r2r/:from/:to/:currencyCode",(req, res) => {
     const origin = req.params.from
     const destination = req.params.to
     const currencyCode = req.params.currencyCode
+    const data = origin+"-"+destination
 
     console.log(currencyCode)
-    const url = `http://free.rome2rio.com/api/1.4/json/Search?key=${key}&oName=${origin}&dName=${destination}&currencyCode=${currencyCode}`
+    const url = `http://free.rome2rio.com/api/1.4/json/Search?key=${key}&oName=${origin}&dName=${destination}&currencyCode=${currencyCode}&data=${data}`
+
+
 
     axios.get(url)
         .then(response => {
