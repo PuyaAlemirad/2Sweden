@@ -103,6 +103,7 @@ export function get_CC(callback=(e)=>(e)) {
 
 export function get_r2r2(arr, currencyCode, callback=(e)=>(e)) {
 
+    console.log(arr)
     arr = arr.map(t => {
         return {
             key: `${t.origin}-${t.destination}`,
@@ -120,7 +121,8 @@ export function get_r2r2(arr, currencyCode, callback=(e)=>(e)) {
 
     return Promise.all(Object.values(trips).map(e => get_r2r(e.origin, e.destination, currencyCode)))
         .then(d => {
-            return arr.map(trip => d.find(r => (r.data === trip.key)))
+
+            return arr.map(trip => d.find(p => (p.data === trip.key)))
         })
         .then(d => {
             callback(d)

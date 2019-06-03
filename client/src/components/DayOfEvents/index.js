@@ -46,7 +46,7 @@ export default function DayOfEvents(props) {
                     />
                     <CityButton
                         highlights={props.highlights}
-                        city={"Åre"}
+                        city={"Are, Sweden"}
                         day={Number.parseInt(props.date.substring(0,2))-6}
                         events={props.events.å}
                     />
