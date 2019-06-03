@@ -14,11 +14,7 @@ export default class Search extends React.Component {
         super()
 
         this.state = {
-            start: 0,
-            end: 0,
-            routes: [],
-            currencyCode: "$$$",
-            localCurrency: null,
+            localCurrency: "$$$",
             highlights: []
         }
     }
@@ -56,8 +52,8 @@ export default class Search extends React.Component {
         eventNamesList = Object.keys(eventNamesList)
 
         return (
-            <div className="yellow my-rounded py-3 container my-3">
-                <form name="search" className="row">
+            <div className="container">
+                <form name="search" className="row" onSubmit={e=> e.preventDefault()}>
                     <div className="col-12 col-md-3">
                         <input
                             required
@@ -134,8 +130,6 @@ export default class Search extends React.Component {
         dayForms.map(f => {
             for (let c of choices) {
                 if (f[c].className.includes("active")) {
-                    /* if (c === "Åre")
-                        c = "are, sweden" */
                     return c
                 }
             }
@@ -166,39 +160,6 @@ export default class Search extends React.Component {
         get_r2r2(routes, currency, d => {
             return this.props.changePageTo(d, "result")
         })
-
-
-
-
-
-
-
-
-        // form.preventDefault()
-
-        // let destination = form.target.elements["destination"].value
-        // // let origin = String(form.target.elements["origin"].value).trim()
-        // let currencyCode = form.target.elements["currencyCode"].value
-
-
-        // if (origin === "") {
-        //     // If origin field is empty, do nothing.
-        //     form.target.elements["origin"].value = origin
-        //     return
-        // }
-
-        // get_r2r(origin, destination, currencyCode, data => {
-        //     console.log(this.state.localCurrency)
-        //     this.setState({
-        //         routes: data.routes,
-        //         start: data.oCoords,
-        //         end: data.dCoords,
-        //         currencyCode: data.currencyCode
-
-        //     })
-        //     this.sortRoutes()
-        // })
-
     }
 }
 

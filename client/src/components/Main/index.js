@@ -32,9 +32,9 @@ export default class index extends Component {
     }
     render() {
         return (
-            <div >
+            <main className="my-3 yellow my-rounded py-3">
                 {this.select()}
-            </div>
+            </main>
         )
     }
 }

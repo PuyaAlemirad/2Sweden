@@ -122,7 +122,13 @@ export function get_r2r2(arr, currencyCode, callback=(e)=>(e)) {
     return Promise.all(Object.values(trips).map(e => get_r2r(e.origin, e.destination, currencyCode)))
         .then(d => {
 
-            return arr.map(trip => d.find(p => (p.data === trip.key)))
+            return arr.map(trip => {
+                return {
+                    data: d.find(p => (p.data === trip.key)),
+                    start: trip.trip.origin,
+                    stop: trip.trip.destination
+                }
+            })
         })
         .then(d => {
             callback(d)

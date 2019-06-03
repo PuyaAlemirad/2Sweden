@@ -10,7 +10,7 @@ export default function Route(props) {
 
     let list2 = []
     props.segments.map(s => s.path.map(p => list2.push(p)))
-    console.log(list2);
+    
     return (
       
         <tbody>
