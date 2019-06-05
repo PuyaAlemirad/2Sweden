@@ -1,19 +1,35 @@
 import React from 'react'
 import Trip from '../../Trip'
 
+function selectedTrip(results, callback){
+    const forms = results.map((r, ri)=> document.forms[`selectedRoute${ri}`])
+    let arrSelected =[] 
+    for(let i =0; i <results.length; i++){
+       if (forms[i][`optradio${i}`].value===""){
+           forms[i][`tripButton${i}`].style.background="#dc3545"
+
+        return
+       }
+
+       arrSelected.push(results[i].data.routes[forms[i][`optradio${i}`].value])
+        //console.log(forms[i][`optradio${i}`].value)
+        
+    }
+
+    callback(arrSelected)
+    
+}
+
 export default function Result(props) {
 
     let routes = ["hej"]
-    let i = 0;
     return (
         <div className="container">
-            {props.results.map(t =>
-                <Trip currencyCode = {t.data.currencyCode} routes = {t.data.routes} dataKey = {i++} key ={i} start={t.start} stop={t.stop}/>        
+            {props.results.map((t, ti) =>
+                <Trip currencyCode = {t.data.currencyCode} routes = {t.data.routes} dataKey = {ti} key ={ti} start={t.start} stop={t.stop}/>        
             )}
 
-
-
-            <button className="btn btn-block btn-danger" onClick={() => props.changePageTo(routes, "summary")}>Continue</button>
+            <button className="btn btn-block btn-danger" onClick={() => selectedTrip(props.results, (x) => props.changePageTo(x, "summary"))}>Continue</button>
 
         </div>
 

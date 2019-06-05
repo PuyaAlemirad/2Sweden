@@ -4,16 +4,15 @@ import {capitalize} from '../../tools/StringFormating'
 
 
 export default function Trip(props) {
-    let i = 0;
     return (
-        <div>
+        <form name={`selectedRoute${props.dataKey}`} onSubmit={e=>e.preventDefault()}>
 
-            <button className="btn btn-block btn-secondary my-2"
+            <button name ={`tripButton${props.dataKey}`} className="btn btn-block btn-secondary my-2"
             data-target={`#trip${props.dataKey}`}
             data-toggle="collapse">
             <p>{`${capitalize(props.start)}   -->   ${capitalize(props.stop)}`}</p></button>
 
-
+            
             <table id={`trip${props.dataKey}`} className="table collapse">
                 <thead >
                     <tr className="segment title">
@@ -27,10 +26,10 @@ export default function Trip(props) {
                 </thead>
 
 
-                {props.routes.map(r => {
+                {props.routes.map((r, ri) => {
                     return <Route
-                        key={i++}
-                        dataKey={i}
+                        key={ri}
+                        dataKey={ri}
                         tripDataKey = {props.dataKey}
                         currency={r.currency}
                         segments={r.segments}
@@ -42,7 +41,7 @@ export default function Trip(props) {
                 })}
 
             </table>
-        </div>
+        </form>
     )
 
 
