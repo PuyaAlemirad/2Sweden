@@ -24,8 +24,6 @@ export default class Search extends React.Component {
     }
 
 
-
-
     highlight(event) {
         const target = event.target
         const value = target.value
@@ -120,6 +118,11 @@ export default class Search extends React.Component {
         const dayForms = events.map((day, dayIndex) => document.forms[`day-${dayIndex + 1}`])
 
         const origin = searchForm["origin"].value
+        if(origin.trim() === ""){
+           searchForm["origin"].style.background="#dc3545"
+           window.scrollTo(0,0)
+            return 
+        }
         const currency = searchForm["currencyCode"].value
 
         let stops = {
