@@ -57,7 +57,7 @@ body {
 }
 
 .highlight {
-  color: red;
+  color:#ffcc00;
 }
 
 .container-fluid {
@@ -258,7 +258,7 @@ li {
 
 .segment {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
 }
 
 .segment.title {
