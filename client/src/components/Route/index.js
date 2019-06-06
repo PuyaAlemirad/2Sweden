@@ -11,6 +11,8 @@ export default function Route(props) {
     let list2 = []
     props.segments.map(s => s.path.map(p => list2.push(p)))
 
+    const tableId = `table-${props.dataKey}-${props.tripDataKey}`
+
     return (
 
         <tbody>
@@ -21,7 +23,7 @@ export default function Route(props) {
             >
 
 
-                <td data-target={`#table${props.dataKey}`}
+                <td data-target={`#${tableId}`}
                     data-toggle="collapse" className="col " >
                     <i
                         className={"fa fa-caret-right"}
@@ -30,11 +32,11 @@ export default function Route(props) {
                     />
                     {props.segments[0].from} - {props.segments[props.segments.length - 1].to}
                 </td>
-                <td data-target={`#table${props.dataKey}`}
+                <td data-target={`#${tableId}`}
                     data-toggle="collapse" className="col">{props.segments.map(s => s.transport).join(" - ")}</td>
-                <td data-target={`#table${props.dataKey}`}
+                <td data-target={`#${tableId}`}
                     data-toggle="collapse" className="col">{minutesToHM(props.duration)}</td>
-                <td data-target={`#table${props.dataKey}`}
+                <td data-target={`#${tableId}`}
                     data-toggle="collapse">{props.price}</td>
                 <td> <input type="radio" name={`optradio${props.tripDataKey}`} value ={props.dataKey}/></td>
 
@@ -45,7 +47,7 @@ export default function Route(props) {
 
             <tr >
 
-                <td className='my-rounded text-center table collapse' id={`table${props.dataKey}`} >
+                <td className='my-rounded text-center table collapse' id={tableId} >
                     <div className="segment title">
                         <h5>{"From-To "}</h5>
                         <h5>{"Transport "}</h5>
