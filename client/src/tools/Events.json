@@ -1,5 +1,26 @@
 [
     {
+        "date": "CITY",
+        "events": {
+            "s": [{
+                "name": "STOCKHOLM",
+                "isMedal":false
+            }],
+            "å": [
+                {
+                    "name": "ÅRE",
+                    "isMedal": false
+                }
+            ],
+            "f": [
+                {
+                    "name": "FALUN",
+                    "isMedal": false
+                }
+            ]
+        }
+    },
+    {
         "date": "07/02/2024",
         "events": {
             "s": [],

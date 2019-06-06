@@ -99,13 +99,21 @@ export default class Search extends React.Component {
                             }
                         }}
                     >
+                    {/* <button name={props.city} type="button" data-toggle="list" className={"list-group-item list-group-item-action my-1 my-rounded blue overflow-auto"} id={`${props.day}${props.city[0]}`}>
+                {props.events.map(e => 
+                    <div className="d-flex justify-content-between py-1" key={i++}>
+                        <p className={"m-0"+(props.highlights.includes(e.name)? " highlight": "")}>{e.name}</p>
+                        {(e.isMedal) ? <i className="fas fa-award align-self-center"></i> : ""}
+                    </div>
+                )}
+        </button> */}
                         {events.map(d =>
                             <DayOfEvents date={d.date} events={d.events} key={i++} highlights={this.state.highlights} />
                         )}
                     </Carousel>
                 </div>
                 <div className="row">
-                    <button onClick={() => this.search()} className="btn btn-primary btn btn-main ">Search</button>
+                    <button onClick={() => this.search()} className="btn btn-primary btn btn-main btn-block ">Search</button>
                 </div>
             </div>
         )

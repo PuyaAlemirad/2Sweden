@@ -3,6 +3,8 @@ import Segment from "../Segment"
 import { minutesToHM } from "../../tools/StringFormating"
 import Maps from "../Map";
 
+
+
 export default function Route(props) {
     let isBlue = 0;
     let list = props.segments.map(s => s.sInfo);
@@ -20,17 +22,20 @@ export default function Route(props) {
 
             >
 
-
+                
                 <td data-target={`#table${props.dataKey}`}
                     data-toggle="collapse" className="col " >
-                    <i
-                        className={"fa fa-caret-right"}
+                  
+                    <i className={" fa fa-caret-right" }
 
                         style={{ fontSize: "18px", position: "relative", float: "left" }}
                     />
+                   
                     {props.segments[0].from} - {props.segments[props.segments.length - 1].to}
                 </td>
-                <td data-target={`#table${props.dataKey}`}
+
+                <td 
+                    data-target={`#table${props.dataKey}`}
                     data-toggle="collapse" className="col">{props.segments.map(s => s.transport).join(" - ")}</td>
                 <td data-target={`#table${props.dataKey}`}
                     data-toggle="collapse" className="col">{minutesToHM(props.duration)}</td>
