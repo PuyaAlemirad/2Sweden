@@ -14,7 +14,7 @@ export default function Navbar() {
                     <a href="index.html" className="yellow btn btn-primary">Se rekommendationer</a>
                 </ul>
             </div>
-            <div><h1 className="tosweden-h3 display-4 text-center d-none d-md-block">2Sweden</h1></div>
+            <div><h1 className="tosweden-h3 text-yellow display-4 text-center d-none d-md-block">2Sweden</h1></div>
             <div className="pos-f-t smallNav">
                 <div className="collapse" id="navbarToggleExternalContent">
                     <div className="p-4">

@@ -16,7 +16,7 @@ export default function Route(props) {
         <tbody>
             <tr
 
-                className={"segment " + (props.dataKey % 2 === 0 ? "white" : "navy")}
+                className={"segment blue my-rounded"}
 
             >
 
@@ -45,7 +45,7 @@ export default function Route(props) {
 
             <tr >
 
-                <td className='table collapse' id={`table${props.dataKey}`} >
+                <td className='my-rounded text-center table collapse' id={`table${props.dataKey}`} >
                     <div className="segment title">
                         <h5>{"From-To "}</h5>
                         <h5>{"Transport "}</h5>

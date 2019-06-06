@@ -105,7 +105,7 @@ export default class Search extends React.Component {
                     </Carousel>
                 </div>
                 <div className="row">
-                    <button onClick={() => this.search()} className="btn btn-primary btn btn-main ">Search</button>
+                    <button onClick={() => this.search()} className="btn btn-primary mb-0 text-yellow ">Search</button>
                 </div>
             </div>
         )

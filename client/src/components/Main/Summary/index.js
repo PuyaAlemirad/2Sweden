@@ -4,7 +4,7 @@ import Route from '../../Route'
 export default function Summary(props) {
     return (
                
-            <table id={`trip${props.dataKey}`} className="table">
+            <table id={`trip${props.dataKey}`} className="my-rounded text-center table">
                 <thead >
                     <tr className="segment title">
 

@@ -13,7 +13,7 @@ export default function Trip(props) {
             <p>{`${capitalize(props.start)}   -->   ${capitalize(props.stop)}`}</p></button>
 
             
-            <table id={`trip${props.dataKey}`} className="table collapse">
+            <table id={`trip${props.dataKey}`} className="my-rounded text-center table collapse">
                 <thead >
                     <tr className="segment title">
 
