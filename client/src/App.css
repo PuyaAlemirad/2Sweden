@@ -278,6 +278,20 @@ li {
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
 }
 
+.segment2{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr; 
+  
+}
+
+
+.segment2.title {
+  background-color: lightgray;
+  padding: 1px 0;
+  border-right: none;
+  text-align-last: center;
+}
+
 .segment.title {
   background-color: lightgray;
   padding: 1px 0;

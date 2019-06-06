@@ -14,11 +14,11 @@ export default function Route(props) {
     props.segments.map(s => s.path.map(p => list2.push(p)))
 
     return (
-
+        
         <tbody>
             <tr
 
-                className={"segment " + (props.dataKey % 2 === 0 ? "white" : "navy")}
+                className={props.tripDataKey===undefined?" segment2 navy ":" segment navy "}
 
             >
 
@@ -41,7 +41,7 @@ export default function Route(props) {
                     data-toggle="collapse" className="col">{minutesToHM(props.duration)}</td>
                 <td data-target={`#table${props.dataKey}`}
                     data-toggle="collapse">{props.price}</td>
-                <td> <input type="radio" name={`optradio${props.tripDataKey}`} value ={props.dataKey}/></td>
+                {props.tripDataKey===undefined?" ":<td> <input type="radio" name={`optradio${props.tripDataKey}`} value ={props.dataKey}/></td>}
 
 
 
