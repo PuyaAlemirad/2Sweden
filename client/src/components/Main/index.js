@@ -21,7 +21,7 @@ export default class index extends Component {
                 />
 
             case "result":
-                console.log("hejsan")
+               
                 return <Result results={this.state.results} changePageTo={(r, page) => this.setState({ routes: r, mainPage: page })} />
 
             case "summary":

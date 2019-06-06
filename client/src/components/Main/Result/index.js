@@ -22,7 +22,7 @@ function selectedTrip(results, callback){
 
 export default function Result(props) {
 
-    let routes = ["hej"]
+    
     return (
         <div className="container">
             {props.results.map((t, ti) =>

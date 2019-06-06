@@ -10,7 +10,7 @@ export function get_r2r(origin, destination, currencyCode, callback=(e)=>(e)) {
         
         .then(res => res.json())
            .then(data => {
-           // console.log(data) // for debugging
+        //    console.log(data) // for debugging
             
 
             let routes = data.routes.map(r => {
@@ -103,7 +103,6 @@ export function get_CC(callback=(e)=>(e)) {
 
 export function get_r2r2(arr, currencyCode, callback=(e)=>(e)) {
 
-    console.log(arr)
     arr = arr.map(t => {
         return {
             key: `${t.origin}-${t.destination}`,

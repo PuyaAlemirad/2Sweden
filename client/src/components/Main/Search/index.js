@@ -113,11 +113,12 @@ export default class Search extends React.Component {
 
 
 
-    search(form) {
+    search() {
         const searchForm = document.forms["search"]
         const dayForms = events.map((day, dayIndex) => document.forms[`day-${dayIndex + 1}`])
 
         const origin = searchForm["origin"].value
+
         if(origin.trim() === ""){
            searchForm["origin"].style.background="#dc3545"
            window.scrollTo(0,0)
@@ -135,10 +136,14 @@ export default class Search extends React.Component {
                 if (f[c].className.includes("active")) {
                     return c
                 }
+              
             }
+            return null
         }).forEach((c, ci) => {
             if (c !== "none") {
+
                 const x = Object.values(stops)
+
                 if (x[Object.keys(stops).reduce((o1, o2) => Math.max(Number.parseInt(o1), Number.parseInt(o2)))] !== c)
                     stops[ci + 1] = c
             }
@@ -146,19 +151,20 @@ export default class Search extends React.Component {
 
         stops[Object.keys(stops).reduce((o1, o2) => Math.max(Number.parseInt(o1), Number.parseInt(o2))) + 2] = origin
 
-        console.log(stops)
+       
 
         let y = Object.values(stops)
         let routes = []
 
         y.forEach((city, index) => {
             const nextCity = y[index + 1]
-            if (nextCity !== undefined)
+            if (nextCity !== undefined && nextCity !== city )
                 routes.push({
                     origin: city,
                     destination: nextCity
                 })
         })
+
 
         get_r2r2(routes, currency, d => {
             return this.props.changePageTo(d, "result")
