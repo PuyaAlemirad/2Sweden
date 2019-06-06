@@ -122,8 +122,11 @@ export function get_r2r2(arr, currencyCode, callback=(e)=>(e)) {
         .then(d => {
 
             return arr.map(trip => {
-                
+                if(trip.trip.origin === trip.trip.destination){
+                    return 
+                }
                 return {
+                    
                     data: d.find(p => (p.data === trip.key)),
                     start: (trip.trip.origin === "Are, Sweden")?"Åre":trip.trip.origin,
                     stop: (trip.trip.destination === "Are, Sweden")?"Åre":trip.trip.destination

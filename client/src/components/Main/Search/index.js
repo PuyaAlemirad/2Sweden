@@ -44,6 +44,7 @@ export default class Search extends React.Component {
     render() {
         let i = 0 //Each Route needs a unique key.
         let eventNamesList = {}
+        const cityNames = ["Stockholm", "Åre", "Falun"]
 
         events.flatMap(day => Object.values(day.events))
             .forEach(city => city.forEach(event => eventNamesList[event.name] = ""))
@@ -51,7 +52,7 @@ export default class Search extends React.Component {
 
         return (
             <div className="container">
-                <form name="search" className="row" onSubmit={e=> e.preventDefault()}>
+                <form name="search" className="row" onSubmit={e => e.preventDefault()}>
                     <div className="col-12 col-md-3">
                         <input
                             required
@@ -99,13 +100,33 @@ export default class Search extends React.Component {
                             }
                         }}
                     >
+                        <div className="h-100 mx-1">
+
+                            <div className="list-group my-city-list h-100">
+
+                                <button
+                                    className={"list-group-item list-group-item-action list-group-item-danger active my-rounded text-center"}
+                                >
+                                    City
+        </button>
+                                {cityNames.map(e =>
+                                    <button className={"list-group-item list-group-item-action my-1 my-rounded overflow-auto bkg-"+e}>
+
+                                        <div className="d-flex justify-content-center align-items-start py-1" >
+                                            <h4 className={"m-0 text-yellow "}>{e}</h4>
+                                        </div>
+
+                                    </button>)}
+                            </div>
+                        </div>
+
                         {events.map(d =>
                             <DayOfEvents date={d.date} events={d.events} key={i++} highlights={this.state.highlights} />
                         )}
                     </Carousel>
                 </div>
                 <div className="row">
-                    <button onClick={() => this.search()} className="btn btn-primary mb-0 text-yellow ">Search</button>
+                    <button onClick={() => this.search()} className="btn btn-primary mb-0 text-yellow btn-block">Search</button>
                 </div>
             </div>
         )
@@ -118,11 +139,10 @@ export default class Search extends React.Component {
         const dayForms = events.map((day, dayIndex) => document.forms[`day-${dayIndex + 1}`])
 
         const origin = searchForm["origin"].value
-
-        if(origin.trim() === ""){
-           searchForm["origin"].style.background="#dc3545"
-           window.scrollTo(0,0)
-            return 
+        if (origin.trim() === "") {
+            searchForm["origin"].style.background = "#dc3545"
+            window.scrollTo(0, 0)
+            return
         }
         const currency = searchForm["currencyCode"].value
 
@@ -131,9 +151,11 @@ export default class Search extends React.Component {
         }
 
         const choices = ["none", "Stockholm", "Are, Sweden", "Falun"]
+
         dayForms.map(f => {
             for (let c of choices) {
                 if (f[c].className.includes("active")) {
+                    console.log(c)
                     return c
                 }
               
@@ -165,6 +187,11 @@ export default class Search extends React.Component {
                 })
         })
 
+        if (routes[0].origin === routes[0].destination) {
+            window.scrollTo(0, 0)
+            alert("Choose an event")
+            return
+        }
 
         get_r2r2(routes, currency, d => {
             return this.props.changePageTo(d, "result")
