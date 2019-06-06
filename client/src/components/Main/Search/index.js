@@ -130,9 +130,11 @@ export default class Search extends React.Component {
         }
 
         const choices = ["none", "Stockholm", "Are, Sweden", "Falun"]
+     
         dayForms.map(f => {
             for (let c of choices) {
                 if (f[c].className.includes("active")) {
+                    console.log(c)
                     return c
                 }
             }
@@ -160,6 +162,12 @@ export default class Search extends React.Component {
                 })
         })
 
+        if(routes[0].origin === routes[0].destination){
+            window.scrollTo(0,0)
+            alert("Choose an event")
+            return 
+        }
+    
         get_r2r2(routes, currency, d => {
             return this.props.changePageTo(d, "result")
         })
