@@ -19,15 +19,15 @@ export default function Trip(props) {
     return (
         <form name={`selectedRoute${props.dataKey}`} onSubmit={e=>e.preventDefault()}>
 
-            <button name ={`tripButton${props.dataKey}`} className="btn btn-block btn-secondary my-2"
+            <button name ={`tripButton${props.dataKey}`} className="btn btn-block btn-secondary my-2 my-rounded"
             data-target={`#trip${props.dataKey}`}
             data-toggle="collapse">
             <p>{`${capitalize(props.start)}   -->   ${capitalize(props.stop)}`}</p></button>
 
             
-            <table id={`trip${props.dataKey}`} className="my-rounded text-center table collapse">
+            <table id={`trip${props.dataKey}`} className="my-rounded text-center table table-borderless collapse">
                 <thead >
-                    <tr className="segment title">
+                    <tr className="segment title tr">
 
                         <th scope="col">
                             From --> To 

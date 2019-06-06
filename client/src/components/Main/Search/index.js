@@ -75,7 +75,7 @@ export default class Search extends React.Component {
                             </select>
                         </div>
                     </div>
-                    <div className="btn-group btn-group-toggle overflow-auto col-12 col-md-9">
+                    <div className="btn-group btn-group-toggle overflow-auto col-12 col-md-9 p-0 my-rounded">
                         {eventNamesList.map((e, ei) =>
                             <button key={ei} onClick={ev => this.highlight(ev)} value={e} type="button" className="btn btn-primary" data-toggle="button">
                                 {e}
@@ -110,7 +110,7 @@ export default class Search extends React.Component {
                                     City
         </button>
                                 {cityNames.map((e, ei) =>
-                                    <button key={ei} className={"list-group-item list-group-item-action my-1 my-rounded overflow-auto bkg-"+e}>
+                                    <button key={ei} className={"list-group-item list-group-item-action my-1 my-rounded overflow-auto bkg-"+(e ==="Åre"?"are":e)}>
 
                                         <div className="d-flex justify-content-center align-items-start py-1" >
                                             <h4 className={"m-0 text-yellow "}>{e}</h4>

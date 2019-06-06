@@ -18,7 +18,7 @@ export default function Route(props) {
     return (
 
         <tbody>
-            <tr className={"blue my-rounded " + (props.tripDataKey === undefined ? " segment2 " : " segment ")}>
+            <tr className={"blue my-rounded tr " + (props.tripDataKey === undefined ? " segment2 " : " segment ")}>
                 <td data-target={`#${tableId}`}
                     data-toggle="collapse" className="col " >
 
@@ -40,14 +40,14 @@ export default function Route(props) {
 
             </tr>
 
-            <tr >
+            <tr className="tr">
 
-                <td className='my-rounded text-center table collapse' id={tableId} >
-                    <div className="container">
-
-                        <div className="col-12 col-lg-6 align-self-center">
-
-                            <div className="segment title">
+                <td colSpan="20" className='my-rounded text-center table collapse' id={tableId} >
+                    <div className=" container p-0 row" >
+                   
+                        <div className="col-12 col-lg-6 border-right-2 bg-seablue" >
+                           <div className="p-20">
+                            <div className="segment2 title">
                                 <h5>{"From-To "}</h5>
                                 <h5>{"Transport "}</h5>
                                 <h5>{"Duration "}</h5>
@@ -67,8 +67,8 @@ export default function Route(props) {
                                 blue={isBlue++ % 2 === 1}
                             />)}
                         </div>
-
-                        <div className="col-12 col-lg-6">
+                        </div>
+                        <div className="col-12 col-lg-6 border-right-2 p-0">
                             <Maps places={list} path={list2} />
 
                         </div>

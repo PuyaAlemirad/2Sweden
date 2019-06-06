@@ -4,9 +4,9 @@ import Route from '../../Route'
 export default function Summary(props) {
     return (
                
-            <table className="my-rounded text-center table">
+            <table className="my-rounded text-center table-borderless table">
                 <thead >
-                    <tr className="segment2 title">
+                    <tr className="segment2 title tr">
 
                         <th scope="col">From --> To </th>
                         <th scope="col">Transport </th>

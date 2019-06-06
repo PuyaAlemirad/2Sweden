@@ -37,8 +37,8 @@ body {
   background-size: cover;
   
 }
-.bkg-Åre{
-  background-image: url("./components/Main/åre.jpg");
+.bkg-are{
+  background-image: url("./components/Main/are.jpg");
   background-size: cover;
   
 }
@@ -81,8 +81,22 @@ body {
   font-weight: bold;
  }
 
+.border-right-2{
+  border: 3px outset black;
+  border-radius: 25px;
+}
+
+.bg-seablue{
+background-color: #aadaff
 
 
+}
+.h-400{
+ height:400px;
+ padding:0px;
+ text-emphasis: center;
+
+}
 
 
 /* media query */
@@ -202,6 +216,11 @@ body {
   height: 100%;
   border-right: 1px solid gray;
   
+}
+
+.tr {
+  border-top: 1px solid #ffcc00;
+  border-bottom: 1px solid #ffcc00;
 }
 
 
