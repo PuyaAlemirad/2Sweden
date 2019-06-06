@@ -21,11 +21,7 @@ export default function DayOfEvents(props) {
 
     return (
         <form name={`day-${dayNo}`} className="h-100 mx-1">
-            <div>
-                <h6 className="text-center">{props.date}</h6>
-                <h6 className="text-center">{`(Day ${dayNo})`}</h6>
-
-            </div>
+           
             <div className="list-group my-city-list h-100">
 
             <button
@@ -33,9 +29,9 @@ export default function DayOfEvents(props) {
                 type="button" 
                 data-toggle="list" 
                 className={"list-group-item list-group-item-action list-group-item-danger active my-rounded"}
-                style={{height:"50px"}}
             >
-                
+                <h6 className="text-center">{props.date}</h6>
+                <h6 className="text-center">{`(Day ${dayNo})`}</h6>
         </button>
                 
                     <CityButton
