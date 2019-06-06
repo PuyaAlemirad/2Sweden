@@ -37,7 +37,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) => {
     <Polyline path={props.path} />
 
     {list}
-    }
+    
 </GoogleMap>)
 }
 ))

@@ -48,26 +48,36 @@ export default function Route(props) {
             <tr >
 
                 <td className='my-rounded text-center table collapse' id={tableId} >
-                    <div className="segment title">
-                        <h5>{"From-To "}</h5>
-                        <h5>{"Transport "}</h5>
-                        <h5>{"Duration "}</h5>
-                        <h5>{`Price(${props.currency})`}</h5>
+                    <div className="container row">
+
+                        <div className="col-12 col-lg-6 align-self-center">
+
+                            <div className="segment title">
+                                <h5>{"From-To "}</h5>
+                                <h5>{"Transport "}</h5>
+                                <h5>{"Duration "}</h5>
+                                <h5>{`Price(${props.currency})`}</h5>
+                            </div>
+
+
+
+                            {props.segments.map(s => <Segment
+                                key={s.index}
+                                transport={s.transport}
+                                from={s.from}
+                                to={s.to}
+                                price={s.price}
+                                duration={s.duration}
+                                currency={s.currency}
+                                blue={isBlue++ % 2 === 1}
+                            />)}
+                        </div>
+
+                        <div className="col-12 col-lg-6">
+                            <Maps places={list} path={list2} />
+
+                        </div>
                     </div>
-
-
-
-                    {props.segments.map(s => <Segment
-                        key={s.index}
-                        transport={s.transport}
-                        from={s.from}
-                        to={s.to}
-                        price={s.price}
-                        duration={s.duration}
-                        currency={s.currency}
-                        blue={isBlue++ % 2 === 1}
-                    />)}
-                    <Maps places={list} path={list2} />
 
 
                 </td>
