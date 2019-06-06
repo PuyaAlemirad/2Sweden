@@ -25,7 +25,6 @@ export default class index extends Component {
                 return <Result results={this.state.results} changePageTo={(r, page) => this.setState({ routes: r, mainPage: page })} />
 
             case "summary":
-                console.log(this.state.routes)
                 return <Summary routes={this.state.routes} />
 
             default: console.error("error")

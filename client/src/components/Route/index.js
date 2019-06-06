@@ -16,23 +16,15 @@ export default function Route(props) {
     const tableId = `table-${props.dataKey}-${props.tripDataKey}`
 
     return (
-        
+
         <tbody>
-            <tr
-
-                className={"blue my-rounded "+(props.tripDataKey===undefined?" segment2 ":" segment ")}
-
-            >
-
-
+            <tr className={"blue my-rounded " + (props.tripDataKey === undefined ? " segment2 " : " segment ")}>
                 <td data-target={`#${tableId}`}
                     data-toggle="collapse" className="col " >
-                  
-                    <i className={" fa fa-caret-right" }
 
+                    <i className={" fa fa-caret-right"}
                         style={{ fontSize: "18px", position: "relative", float: "left" }}
                     />
-                   
                     {props.segments[0].from} - {props.segments[props.segments.length - 1].to}
                 </td>
                 <td data-target={`#${tableId}`}
@@ -41,7 +33,7 @@ export default function Route(props) {
                     data-toggle="collapse" className="col">{minutesToHM(props.duration)}</td>
                 <td data-target={`#${tableId}`}
                     data-toggle="collapse">{props.price}</td>
-                {props.tripDataKey===undefined?" ":<td> <input type="radio" name={`optradio${props.tripDataKey}`} value ={props.dataKey}/></td>}
+                {props.tripDataKey === undefined ? <td style={{display: "none"}}></td> : <td> <input type="radio" name={`optradio${props.tripDataKey}`} value={props.dataKey} /></td>}
 
 
 
@@ -51,7 +43,7 @@ export default function Route(props) {
             <tr >
 
                 <td className='my-rounded text-center table collapse' id={tableId} >
-                    <div className="container row">
+                    <div className="container">
 
                         <div className="col-12 col-lg-6 align-self-center">
 

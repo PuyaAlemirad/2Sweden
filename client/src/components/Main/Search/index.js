@@ -109,8 +109,8 @@ export default class Search extends React.Component {
                                 >
                                     City
         </button>
-                                {cityNames.map(e =>
-                                    <button className={"list-group-item list-group-item-action my-1 my-rounded overflow-auto bkg-"+e}>
+                                {cityNames.map((e, ei) =>
+                                    <button key={ei} className={"list-group-item list-group-item-action my-1 my-rounded overflow-auto bkg-"+e}>
 
                                         <div className="d-flex justify-content-center align-items-start py-1" >
                                             <h4 className={"m-0 text-yellow "}>{e}</h4>
@@ -151,15 +151,16 @@ export default class Search extends React.Component {
         }
 
         const choices = ["none", "Stockholm", "Are, Sweden", "Falun"]
+       
 
         dayForms.map(f => {
             for (let c of choices) {
                 if (f[c].className.includes("active")) {
-                    console.log(c)
                     return c
                 }
               
             }
+            
             return null
         }).forEach((c, ci) => {
             if (c !== "none") {
@@ -171,9 +172,14 @@ export default class Search extends React.Component {
             }
         })
 
+        if(Object.keys(stops).length === 1) {
+            window.scrollTo(0, 0)
+                alert("Choose an event")
+                return
+        }
+
         stops[Object.keys(stops).reduce((o1, o2) => Math.max(Number.parseInt(o1), Number.parseInt(o2))) + 2] = origin
 
-       
 
         let y = Object.values(stops)
         let routes = []
@@ -187,11 +193,11 @@ export default class Search extends React.Component {
                 })
         })
 
-        if (routes[0].origin === routes[0].destination) {
-            window.scrollTo(0, 0)
-            alert("Choose an event")
-            return
-        }
+        // if (routes[0].origin === routes[0].destination) {
+        //     window.scrollTo(0, 0)
+        //     alert("Choose an event")
+        //     return
+        // }
 
         get_r2r2(routes, currency, d => {
             return this.props.changePageTo(d, "result")

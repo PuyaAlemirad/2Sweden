@@ -5,7 +5,7 @@ const axios = require("axios")
 
 
 router2.get("/CC", (req, res) => {
-    console.log("Client request params:",req.params)
+    // console.log("Client request params:",req.params)
    
 
     const key2 = process.env.LOCAL_CURRENCY
@@ -13,7 +13,7 @@ router2.get("/CC", (req, res) => {
     const url2 = `https://api.ipdata.co/?api-key=${key2}`
     axios.get(url2)
         .then(response => {
-            console.log("Axios response data:", response.data)
+            // console.log("Axios response data:", response.data)
             res.json(response.data)
         })
         .catch(err => {
