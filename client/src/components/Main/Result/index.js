@@ -1,39 +1,80 @@
 import React from 'react'
 import Trip from '../../Trip'
 
-function selectedTrip(results, callback){
-    const forms = results.map((r, ri)=> document.forms[`selectedRoute${ri}`])
-    let arrSelected =[] 
-    for(let i =0; i <results.length; i++){
-       if (forms[i][`optradio${i}`].value===""){
-           forms[i][`tripButton${i}`].style.background="#dc3545"
+function selectedTrip(results, callback) {
+    const forms = results.map((r, ri) => document.forms[`selectedRoute${ri}`])
+    let arrSelected = []
+    for (let i = 0; i < results.length; i++) {
+        if (forms[i][`optradio${i}`].value === "") {
+            forms[i][`tripButton${i}`].style.background = "#dc3545"
 
-        return
-       }
+            return
+        }
 
-       arrSelected.push(results[i].data.routes[forms[i][`optradio${i}`].value])
+        arrSelected.push(results[i].data.routes[forms[i][`optradio${i}`].value])
         //console.log(forms[i][`optradio${i}`].value)
-        
+
     }
 
     callback(arrSelected)
-    
+
 }
 
-export default function Result(props) {
 
+export default class Result extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            sortCat: "stops",
+            isSortAsc: true
+            
+        }
+        this.changeSort = this.changeSort.bind(this);
+    }
+    changeSort(event){
+  
+        const value = event.target.value
+       
+        if(this.state.sortCat === value){
+           
+            this.setState({isSortAsc:!this.state.isSortAsc})
+            
+        }
+        else{
+           
+            this.setState({sortCat:value})
+            
+        }
+             
     
-    return (
-        <div className="container">
-            {props.results.map((t, ti) =>
-                <Trip currencyCode = {t.data.currencyCode} routes = {t.data.routes} dataKey = {ti} key ={ti} start={t.start} stop={t.stop}/>        
-            )}
+    
+    
+    
+    }
+    render() {
+        return (
+            <div className="container">
+                {this.props.results.map((t, ti) =>
+                    <Trip 
+                        currencyCode={t.data.currencyCode} 
+                        routes={t.data.routes} 
+                        dataKey={ti} 
+                        key={ti} 
+                        start={t.start} 
+                        stop={t.stop}
+                        sortCat={this.state.sortCat}
+                        isSortAsc={this.state.isSortAsc}
+                        changeSort={this.changeSort}
 
-            <button className="btn btn-block btn-danger" onClick={() => selectedTrip(props.results, (x) => props.changePageTo(x, "summary"))}>Continue</button>
+                    />
+                )}
 
-        </div>
+                <button className="btn btn-block btn-danger" onClick={() => selectedTrip(this.props.results, x => this.props.changePageTo(x, "summary"))}>Continue</button>
 
-    )
+            </div>
+
+        )
+    }
 
 
     // sortRoutes() {
