@@ -37,7 +37,7 @@ export default class Search extends React.Component {
 
 
         this.setState({ highlights: highlights })
-        console.log(highlights)
+        // console.log(highlights)
     }
 
 

@@ -32,8 +32,10 @@ export default class Result extends React.Component {
         this.changeSort = this.changeSort.bind(this);
     }
     changeSort(event){
+        // const target = (event.target.id)
+        // console.log(event.target.id)
   
-        const value = event.target.value
+        const value = event.target.id
        
         if(this.state.sortCat === value){
            
@@ -45,6 +47,8 @@ export default class Result extends React.Component {
             this.setState({sortCat:value})
             
         }
+
+        
              
     
     
