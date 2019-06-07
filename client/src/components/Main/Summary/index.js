@@ -4,7 +4,7 @@ import Route from '../../Route'
 export default function Summary(props) {
     return (
         <div>
-            <h1 className="w-100 text-center text-blue">Summary</h1>
+            <h1 className="w-100 text-center text-blue">My Adventure To Sweden</h1>
 
             <table className="my-rounded text-center table-borderless table">
                 <thead >
