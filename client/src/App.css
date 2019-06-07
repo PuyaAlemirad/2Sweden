@@ -93,11 +93,19 @@ background-color: #aadaff
 }
 .h-400{
  height:400px;
- padding:0px;
- text-emphasis: center;
+ 
+
 
 }
 
+.tables{
+display:flex;
+
+align-self: center;
+justify-content: center;
+
+
+}
 
 /* media query */
 
@@ -107,6 +115,7 @@ background-color: #aadaff
 
 .smallNav {
   display: block;
+  text-align: center;
 }
 
 
@@ -130,8 +139,8 @@ background-color: #aadaff
   }
   
 .sweden-logo {
-  max-width: 12rem;
-  max-height: 12rem;
+  max-width: 8rem;
+  max-height: 8rem;
 }
 }
 

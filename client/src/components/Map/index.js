@@ -1,3 +1,5 @@
+/* global google  */
+
 import React from 'react';
 import { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, Polyline } from "react-google-maps";
@@ -15,18 +17,44 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) => {
 
     let icon =
     {
-      url: (p === 0) ? "http://maps.google.com/mapfiles/ms/icons/green-dot.png" : "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
-
+      scaledSize:new google.maps.Size(32,32),
+      url: (p === '1') ? "http://maps.google.com/mapfiles/kml/paddle/blu-circle.png" : (p === '4') ? "http://maps.google.com/mapfiles/kml/paddle/blu-circle.png":"http://maps.google.com/mapfiles/kml/paddle/ylw-stars.png"
+      
     }
-
+  
+   
+    
     list.push(<Marker
       position={props.places[p].coords}
       title={props.places[p].name}
-      icon={icon}
-
+          icon={icon}
+      strokeWeight={30} 
       key={p}
 
-    />)
+    />,
+    <Polyline path={props.path}  
+    key={p+1}
+       options={{
+        strokeColor: ({p} === '2') ? "#ff69b4" : (p === '4') ? "#ffcc00":"#006699",
+       
+        strokeOpacity: 1,
+        strokeWeight: 4,
+        offset: '0%',
+        icons: [
+            {
+                strokeWeight: 2,
+               
+                offset: '0%',
+                repeat: '35px'
+            }
+        ]
+    }}
+    
+      />
+
+    
+    )
+
 
   }
   return (<GoogleMap
@@ -34,8 +62,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) => {
     defaultCenter={props.places[0].coords}
   >
 
-    <Polyline path={props.path} />
-
+    
     {list}
     
 </GoogleMap>)

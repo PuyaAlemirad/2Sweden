@@ -45,8 +45,8 @@ export default function Route(props) {
                 <td colSpan="20" className='my-rounded text-center table collapse' id={tableId} >
                     <div className=" container p-0 row" >
                    
-                        <div className="col-12 col-lg-6 border-right-2 bg-seablue" >
-                           <div className="p-20">
+                        <div className="col-12 col-lg-6 col-sm-6 border-right-2 bg-seablue tables" >
+                           <div className="p-5" >
                             <div className="segment2 title">
                                 <h5>{"From-To "}</h5>
                                 <h5>{"Transport "}</h5>
@@ -68,7 +68,7 @@ export default function Route(props) {
                             />)}
                         </div>
                         </div>
-                        <div className="col-12 col-lg-6 border-right-2 p-0">
+                        <div className="col-12 col-lg-6 border-right-2 p-0 h-100">
                             <Maps places={list} path={list2} />
 
                         </div>
