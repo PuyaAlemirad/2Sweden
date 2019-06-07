@@ -12,7 +12,7 @@ export default function Header(props) {
                 <div className="row">
                     <div className="col-md-4 col-12 text-center">
                         <img src={logo} className="p-3 img-fluid sweden-logo" alt="2Sweden logo"  data-test='header-logo' />
-                        <button className="navbar-toggler btn nav-drop yellow smallNav align-center" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <button className="navbar-toggler btn nav-drop yellow smallNav" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                             <i className="fas fa-bars"></i>
                         </button>
                     </div>
