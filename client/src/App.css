@@ -18,6 +18,10 @@ body {
   background-repeat: no-repeat;
 }
 
+.handOnHover {
+  cursor: pointer;
+}
+
 #root {
   height: 100%;
 }

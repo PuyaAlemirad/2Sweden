@@ -53,19 +53,19 @@ export default function Trip(props) {
 
                                 Transport
                                     <i id="stops" style={{ height: "10px" }} className={"pl-2 align-self:center text-dark " +
-                                    (props.sortCat === "stops" ? (props.isSortAsc ? "fas fa-sort" : "fas fa-sort") : "fas fa-sort")} ></i>
+                                    (props.sortCat === "stops" ? (props.isSortAsc ? "fas fa-sort-down" : "fas fa-sort-up") : "")} ></i>
 
                         </th>
                         <th scope="col" id="time"  value="time" onClick={props.changeSort}>
                                 Duration
                                 <i id="time" style={{ height: "10px" }} className={"pl-2 align-self:center text-dark " +
-                                    (props.sortCat === "time" ? (props.isSortAsc ? "fas fa-sort" : "fas fa-sort") : "fas fa-sort")} ></i>
+                                    (props.sortCat === "time" ? (props.isSortAsc ? "fas fa-sort-down" : "fas fa-sort-up") : "")} ></i>
 
                         </th>
                         <th scope="col" id="price" value="price" onClick={props.changeSort}>
                                 Price({props.currencyCode})
                                 <i id="price" style={{ height: "10px" }} className={"pl-2 align-self:center text-dark " +
-                                    (props.sortCat === "price" ? (props.isSortAsc ? "fas fa-sort" : "fas fa-sort") : "fas fa-sort")} ></i>
+                                    (props.sortCat === "price" ? (props.isSortAsc ? "fas fa-sort-down" : "fas fa-sort-up") : "")} ></i>
 
                         </th>
                         <th scope="col"> Option </th>

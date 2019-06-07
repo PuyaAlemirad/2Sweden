@@ -15,25 +15,33 @@ export default function Route(props) {
 
     const tableId = `table-${props.dataKey}-${props.tripDataKey}`
 
+    const updateInfoLogo = () => {
+        const btn = document.getElementById(tableId+"-info-btn")
+        const info = document.getElementById(tableId+"-info")
+        info.className = btn.attributes["aria-expanded"].value === "true" ? "fa fa-caret-down" : "fa fa-caret-right"
+    }
+
     return (
 
         <tbody>
-            <tr className={"blue my-rounded tr " + (props.tripDataKey === undefined ? " segment2 " : " segment ")}>
+            <tr className={"blue my-rounded tr " + (props.tripDataKey === undefined ? " segment2 " : " segment ")} onClick={updateInfoLogo}>
                 <td data-target={`#${tableId}`}
                     data-toggle="collapse" className="col " >
 
-                    <i className={" fa fa-caret-right"}
+                    <i id={tableId+"-info"} className={"fa fa-caret-right"}
                         style={{ fontSize: "18px", position: "relative", float: "left" }}
                     />
                     {props.segments[0].from} - {props.segments[props.segments.length - 1].to}
                 </td>
-                <td data-target={`#${tableId}`}
-                    data-toggle="collapse" className="col">{props.segments.map(s => s.transport).join(" - ")}</td>
+                <td id={tableId+"-info-btn"}
+                    data-target={`#${tableId}`}
+                    data-toggle="collapse" 
+                    className="col">{props.segments.map(s => s.transport).join(" - ")}</td>
                 <td data-target={`#${tableId}`}
                     data-toggle="collapse" className="col">{minutesToHM(props.duration)}</td>
                 <td data-target={`#${tableId}`}
                     data-toggle="collapse">{props.price}</td>
-                {props.tripDataKey === undefined ? <td style={{display: "none"}}></td> : <td> <input type="radio" name={`optradio${props.tripDataKey}`} value={props.dataKey} /></td>}
+                {props.tripDataKey === undefined ? <td style={{display: "none"}}></td> : <td> <input type="radio" className="handOnHover" name={`optradio${props.tripDataKey}`} value={props.dataKey} /></td>}
 
 
 
