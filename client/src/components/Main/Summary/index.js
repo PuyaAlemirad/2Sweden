@@ -3,7 +3,9 @@ import Route from '../../Route'
 
 export default function Summary(props) {
     return (
-               
+        <div>
+            <h1 className="w-100 text-center text-blue">Summary</h1>
+
             <table className="my-rounded text-center table-borderless table">
                 <thead >
                     <tr className="segment2 title tr">
@@ -28,6 +30,8 @@ export default function Summary(props) {
                     />
                 })}
                 </table>
+        </div>
+               
 
         
     )

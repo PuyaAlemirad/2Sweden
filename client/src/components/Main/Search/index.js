@@ -52,6 +52,7 @@ export default class Search extends React.Component {
 
         return (
             <div className="container">
+                {/* <h1 className="w-100 text-center text-blue">Choose Origin and select events</h1> */}
                 <form name="search" className="row" onSubmit={e => e.preventDefault()}>
                     <div className="col-12 col-md-3">
                         <input

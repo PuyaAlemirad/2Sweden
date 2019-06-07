@@ -54,6 +54,7 @@ export default class Result extends React.Component {
     render() {
         return (
             <div className="container">
+                <h1 className="w-100 text-center text-blue">Choose one route per Trip</h1>
                 {this.props.results.map((t, ti) =>
                     <Trip 
                         currencyCode={t.data.currencyCode} 
