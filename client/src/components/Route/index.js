@@ -18,7 +18,8 @@ export default function Route(props) {
     const updateInfoLogo = () => {
         const btn = document.getElementById(tableId+"-info-btn")
         const info = document.getElementById(tableId+"-info")
-        info.className = btn.attributes["aria-expanded"].value === "true" ? "fa fa-caret-down" : "fa fa-caret-right"
+        if (btn.attributes["aria-expanded"])
+            info.className = btn.attributes["aria-expanded"].value === "true" ? "fa fa-caret-down" : "fa fa-caret-right"
     }
 
     return (
