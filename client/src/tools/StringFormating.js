@@ -7,3 +7,10 @@ export function minutesToHM(timeInMin) {
 
     return `${(d)?d+"d":""} ${(h)?h+"h":""} ${m}min`
 }
+export function capitalize(string) 
+
+{
+
+    return string.charAt(0).toUpperCase() + string.slice(1);
+
+}
